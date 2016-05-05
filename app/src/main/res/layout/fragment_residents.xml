@@ -5,9 +5,88 @@
     tools:context="novahub.vn.npr4dogs.main.ResidentsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_gravity="center">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout"
+            android:background="@color/background">
+            <info.hoang8f.android.segmented.SegmentedGroup
+                xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/segment"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                segmentedgroup:sc_border_width="2dp"
+                segmentedgroup:sc_corner_radius="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:clickable="false">
+
+                <RadioButton
+                    android:id="@+id/button_current"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Current Residents"
+                    style="@style/RadioButton"
+                    android:checked="true"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/button_former"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Former Residents"
+                    style="@style/RadioButton"
+                    android:textColor="@color/white" />
+            </info.hoang8f.android.segmented.SegmentedGroup>
+
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/searchView"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/relativeLayout"
+            android:layout_centerHorizontal="true"
+            android:background="@color/main.background">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:scrollbars="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <!--<novahub.vn.npr4dogs.lib.NonSwipeableViewPager-->
+                <!--android:id="@+id/viewpager"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@android:color/white"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_above="@+id/bottom_navigation" />-->
+
+
+        </RelativeLayout>
+    </RelativeLayout>
 </FrameLayout>

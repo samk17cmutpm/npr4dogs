@@ -112,7 +112,7 @@ public class MainFragment extends BaseFragment implements MainContract.View {
 
     @Override
     public void showTabDetails(int position) {
-        viewPager.setCurrentItem(position, true);
+        viewPager.setCurrentItem(position, false);
     }
 
     @Override

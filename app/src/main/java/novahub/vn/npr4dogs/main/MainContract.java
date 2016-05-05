@@ -1,7 +1,10 @@
 package novahub.vn.npr4dogs.main;
 
+import java.util.List;
+
 import novahub.vn.npr4dogs.BasePresenter;
 import novahub.vn.npr4dogs.BaseView;
+import novahub.vn.npr4dogs.data.Resident;
 
 /**
  * Created by samnguyen on 5/4/16.
@@ -40,10 +43,16 @@ public interface MainContract {
 
     interface BaseResidentsView extends BaseView<BaseResidentsPresenter> {
         void showView();
+        void showSegments();
+        void showViewPagers();
+        void showRecyclerView(List<Resident> residents);
     }
 
     interface BaseResidentsPresenter extends BasePresenter {
         void loadView();
+        void loadSegments();
+        void loadViewPagers();
+        void loadRecyclerView();
     }
 
     interface BaseSettingsView extends BaseView<BaseSettingsPresenter> {
@@ -53,4 +62,5 @@ public interface MainContract {
     interface BaseSettingsPresenter extends BasePresenter {
         void loadView();
     }
+
 }
