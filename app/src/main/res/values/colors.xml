@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Basic colors-->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#67C5EB</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="background">#67C5EB</color>
+    <color name="white">#FFFFFF</color>
+    <color name="orange">#FFB74E</color>
+    <color name="background.blur">#A6DAEF</color>
+
+    <!--Main with tabs-->
+    <color name="tab.background">#96B830</color>
+    <color name="tab.selected">#3C9A06</color>
+</resources>
