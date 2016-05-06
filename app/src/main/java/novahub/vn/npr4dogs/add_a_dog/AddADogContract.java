@@ -14,5 +14,8 @@ public interface AddADogContract {
         void loadView();
         void goNext(int page);
         void setIndicatorVisibility(boolean visibility);
+        void finish();
+        void cancel();
     }
+
 }

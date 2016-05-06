@@ -1,5 +1,6 @@
 package novahub.vn.npr4dogs.add_a_dog;
 
+import android.content.Intent;
 import android.view.View;
 
 /**
@@ -29,6 +30,16 @@ public class AddADogPresenter implements AddADogContract.Presenter {
         } else {
             AddADogActivity.indicator.setVisibility(View.GONE);
         }
+    }
+
+    @Override
+    public void finish() {
+
+    }
+
+    @Override
+    public void cancel() {
+
     }
 
     @Override

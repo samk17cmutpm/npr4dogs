@@ -20,7 +20,7 @@
             android:weightSum="1">
 
             <com.andexert.library.RippleView
-                android:id="@+id/rpv_add_a_dog"
+                android:id="@+id/rpv_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 rv_centered="true"

@@ -48,6 +48,11 @@ public class AddADogPagerAdapter extends SmartFragmentStatePagerAdapter implemen
                 presenter = new
                         AddADogPresenter((AddADogContract.View) fragment);
                 return fragment;
+            case 6:
+                fragment = new StepSevenFragment().newInstance();
+                presenter = new
+                        AddADogPresenter((AddADogContract.View) fragment);
+                return fragment;
         }
         return null;
     }

@@ -5,9 +5,120 @@
     tools:context="novahub.vn.npr4dogs.add_a_dog.StepSevenFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_gravity="center">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Step 6:"
+            android:id="@+id/textView32"
+            android:layout_marginLeft="29dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="29dp"
+            android:textSize="35sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Mail the swab kit to our"
+            android:id="@+id/textView33"
+            android:layout_below="@+id/textView32"
+            android:layout_alignLeft="@+id/textView32"
+            android:layout_alignStart="@+id/textView32" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="lab using the mailer"
+            android:id="@+id/textView34"
+            android:layout_below="@+id/textView33"
+            android:layout_alignLeft="@+id/textView33"
+            android:layout_alignStart="@+id/textView33" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="provided with the kit"
+            android:id="@+id/textView35"
+            android:layout_below="@+id/textView34"
+            android:layout_alignLeft="@+id/textView34"
+            android:layout_alignStart="@+id/textView34" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="We&apos;ll mail you and the"
+            android:id="@+id/textView36"
+            android:layout_below="@+id/textView35"
+            android:layout_alignLeft="@+id/textView34"
+            android:layout_alignStart="@+id/textView34"
+            android:layout_marginTop="35dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="dog owner within 10 "
+            android:id="@+id/textView37"
+            android:layout_below="@+id/textView36"
+            android:layout_alignLeft="@+id/textView35"
+            android:layout_alignStart="@+id/textView35" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="bussiness days to confirm"
+            android:id="@+id/textView38"
+            android:layout_below="@+id/textView37"
+            android:layout_alignLeft="@+id/textView37"
+            android:layout_alignStart="@+id/textView37" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="the swab was successful"
+            android:id="@+id/textView39"
+            android:layout_below="@+id/textView38"
+            android:layout_alignLeft="@+id/textView38"
+            android:layout_alignStart="@+id/textView38" />
+
+        <com.andexert.library.RippleView
+            android:id="@+id/rpv_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            rv_centered="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="70dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp">
+
+            <Button
+                android:id="@+id/bt_sign_in"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Next"
+                android:textStyle="bold"
+                android:layout_below="@+id/view"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/sign_in_radius_button" />
+
+        </com.andexert.library.RippleView>
+    </RelativeLayout>
 </FrameLayout>

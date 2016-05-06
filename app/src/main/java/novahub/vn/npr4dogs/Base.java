@@ -7,5 +7,5 @@ public interface Base {
     public static final String FONT = "fonts/avenir_next.ttc";
     public static final int TABS = 4;
     public static final int RESIDENTS = 2;
-    public static final int ADD_A_DOG = 6;
+    public static final int ADD_A_DOG = 7;
 }
