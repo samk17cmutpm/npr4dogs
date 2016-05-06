@@ -70,6 +70,7 @@ public class ResidentsFragment extends BaseFragment implements MainContract.Base
                 }
             }
         });
+
     }
 
     @Override

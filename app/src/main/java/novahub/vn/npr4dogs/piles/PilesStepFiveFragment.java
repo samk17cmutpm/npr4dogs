@@ -47,7 +47,7 @@ public class PilesStepFiveFragment extends BaseFragment implements PilesContract
         textViewAdd2.setText(Html.fromHtml(htmlString2));
         textViewAdd3.setText(Html.fromHtml(htmlString3));
         textViewAdd4.setText(Html.fromHtml(htmlString4));
-        
+
         return root;
     }
 

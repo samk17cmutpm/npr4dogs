@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
     tools:context="novahub.vn.npr4dogs.main.ResidentsFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -19,45 +20,79 @@
             android:id="@+id/relativeLayout"
             android:background="@color/background">
             <info.hoang8f.android.segmented.SegmentedGroup
-                xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/segment"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="35dp"
                 android:orientation="horizontal"
-                segmentedgroup:sc_border_width="2dp"
+                segmentedgroup:sc_border_width="1dp"
                 segmentedgroup:sc_corner_radius="10dp"
+                segmentedgroup:sc_tint_color="@color/white"
+                segmentedgroup:sc_checked_text_color="@color/background"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:clickable="false">
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
 
                 <RadioButton
                     android:id="@+id/button_current"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:text="Current Residents"
                     style="@style/RadioButton"
-                    android:checked="true"
-                    android:textColor="@color/white" />
+                    android:checked="true" />
 
                 <RadioButton
                     android:id="@+id/button_former"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:text="Former Residents"
-                    style="@style/RadioButton"
-                    android:textColor="@color/white" />
+                    style="@style/RadioButton" />
             </info.hoang8f.android.segmented.SegmentedGroup>
 
-            <SearchView
+            <com.andexert.library.RippleView
+                android:id="@+id/rpv_scan_barcode"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/searchView"
-                android:layout_alignParentBottom="true"
+                android:layout_height="35dp"
+                rv_centered="true"
+                android:layout_below="@+id/relativeLayout3"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
+                android:layout_marginTop="65dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/search_background">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Search"
+                        android:id="@+id/textView23"
+                        android:textColor="@color/black"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginRight="10dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageView11"
+                        android:src="@drawable/search_icon"
+                        android:layout_alignBottom="@+id/textView23"
+                        android:layout_toLeftOf="@+id/textView23"
+                        android:layout_toStartOf="@+id/textView23"
+                        android:layout_marginRight="10dp" />
+                </RelativeLayout>
+
+
+            </com.andexert.library.RippleView>
 
 
         </RelativeLayout>
@@ -66,8 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/relativeLayout"
-            android:layout_centerHorizontal="true"
-            android:background="@color/main.background">
+            android:layout_centerHorizontal="true">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view"

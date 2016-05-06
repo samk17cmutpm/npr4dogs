@@ -34,7 +34,8 @@
                     android:padding="10dp"
                     android:layout_centerVertical="true"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true">
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/cancle_backgrounnd">
 
                     <TextView
                         android:layout_width="wrap_content"
