@@ -26,10 +26,12 @@ public interface MainContract {
 
     interface BaseAddADogView extends BaseView<BaseAddADogPresenter> {
         void showView();
+        void goToAddADog();
     }
 
     interface BaseAddADogPresenter extends BasePresenter {
         void loadView();
+        void addADog();
     }
 
 

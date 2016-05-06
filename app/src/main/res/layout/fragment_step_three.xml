@@ -1,0 +1,274 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="novahub.vn.npr4dogs.add_a_dog.StepThreeFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/payment">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="npr4dogs"
+                android:id="@+id/textView21"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:textSize="35sp"
+                android:textColor="@color/tab.selected" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="New Account Registraiton Fee"
+                android:id="@+id/textView22"
+                android:layout_below="@+id/textView21"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_below="@+id/textView22"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="28dp"
+                android:id="@+id/linearLayout"></LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/linearLayout"
+                android:background="@drawable/payment_fill">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/payment"
+                    android:id="@+id/relativeLayout2">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageView12"
+                        android:src="@drawable/email_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginLeft="10dp"
+                        android:scaleType="fitXY" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:ems="10"
+                        android:id="@+id/editText"
+                        android:text="j.bats@yahoo.com"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/imageView12"
+                        android:layout_toEndOf="@+id/imageView12"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="101dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/payment"
+                    android:layout_below="@+id/relativeLayout2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:id="@+id/relativeLayout3" >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:background="@color/black"
+                        android:id="@+id/linearLayout2"></LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignTop="@+id/linearLayout2"
+                        android:background="@color/black"
+                        android:id="@+id/linearLayout3"></LinearLayout>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageView13"
+                        android:src="@drawable/credit_card_icon"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageView14"
+                        android:layout_below="@+id/linearLayout2"
+                        android:layout_alignLeft="@+id/imageView13"
+                        android:layout_alignStart="@+id/imageView13"
+                        android:src="@drawable/calendar_icon"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="fitXY" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editText2"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/imageView13"
+                        android:layout_toEndOf="@+id/imageView13"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="Card number" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editText3"
+                        android:layout_below="@+id/linearLayout2"
+                        android:layout_alignLeft="@+id/editText2"
+                        android:layout_alignStart="@+id/editText2"
+                        android:layout_toLeftOf="@+id/linearLayout3"
+                        android:layout_toStartOf="@+id/linearLayout3"
+                        android:text="MM / YY" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageView15"
+                        android:src="@drawable/cvc_icon"
+                        android:scaleType="fitXY"
+                        android:layout_alignTop="@+id/imageView14"
+                        android:layout_toRightOf="@+id/linearLayout3"
+                        android:layout_toEndOf="@+id/linearLayout3"
+                        android:layout_marginLeft="10dp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editText4"
+                        android:layout_alignTop="@+id/editText3"
+                        android:layout_alignRight="@+id/editText2"
+                        android:layout_alignEnd="@+id/editText2"
+                        android:layout_toRightOf="@+id/imageView15"
+                        android:layout_toEndOf="@+id/imageView15"
+                        android:layout_marginLeft="10dp"
+                        android:text="CVC" />
+                </RelativeLayout>
+
+                <com.andexert.library.RippleView
+                    android:id="@+id/rpv_scan_barcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    rv_centered="true"
+                    android:layout_below="@+id/relativeLayout3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="26dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/scan_credit_card">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Scan Credit Card"
+                            android:id="@+id/textView23"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/imageView11"
+                            android:layout_toEndOf="@+id/imageView11"
+                            android:textColor="@color/white" />
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:id="@+id/imageView11"
+                            android:src="@drawable/ic_scan_24dp"
+                            android:layout_marginLeft="46dp"
+                            android:layout_marginStart="46dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+                    </RelativeLayout>
+
+
+                </com.andexert.library.RippleView>
+
+
+                <com.andexert.library.RippleView
+                    android:id="@+id/rpv_pay_pee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    rv_centered="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp">
+
+                    <Button
+                        android:id="@+id/bt_sign_in"
+                        style="?android:textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pay $apt.DogDNAFee"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/view"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/sign_in_radius_button" />
+
+                </com.andexert.library.RippleView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</FrameLayout>

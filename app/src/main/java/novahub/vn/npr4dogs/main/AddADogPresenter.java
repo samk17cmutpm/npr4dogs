@@ -17,6 +17,11 @@ public class AddADogPresenter implements MainContract.BaseAddADogPresenter {
     }
 
     @Override
+    public void addADog() {
+        addADogView.goToAddADog();
+    }
+
+    @Override
     public void start() {
 
     }

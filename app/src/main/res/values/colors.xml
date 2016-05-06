@@ -18,6 +18,7 @@
     <color name="tab.background">#96B830</color>
     <color name="tab.selected">#3C9A06</color>
     <color name="main.background">#C1F3F8</color>
+    <color name="payment.background">#F6F6F6</color>
 
 
 </resources>

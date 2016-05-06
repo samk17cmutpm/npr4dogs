@@ -68,7 +68,7 @@
             android:layout_centerHorizontal="true" />
 
         <com.andexert.library.RippleView
-            android:id="@+id/more"
+            android:id="@+id/rpv_add_a_dog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             rv_centered="true"

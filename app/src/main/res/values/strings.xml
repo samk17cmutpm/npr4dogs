@@ -25,4 +25,5 @@
     <string name="tab_piles">Piles</string>
     <string name="tab_residents">Residents</string>
     <string name="tab_setting">Settings</string>
+    <string name="title_activity_add_adog">AddADogActivity</string>
 </resources>
