@@ -20,5 +20,8 @@
     <color name="main.background">#C1F3F8</color>
     <color name="payment.background">#F6F6F6</color>
 
+    <color name="indicator.selected">#764B23</color>
+    <color name="indicator">#FFB74E</color>
+
 
 </resources>

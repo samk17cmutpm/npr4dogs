@@ -25,6 +25,10 @@
         android:layout_height="48dp"
         android:id="@+id/indicator"
         android:layout_marginBottom="10dp"
+        app:ci_drawable="@drawable/circle_indicator"
+        app:ci_drawable_unselected="@drawable/circle_indicator_unselected"
+        app:ci_width="6dp"
+        app:ci_height="6dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
