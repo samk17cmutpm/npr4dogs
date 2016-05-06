@@ -37,10 +37,12 @@ public interface MainContract {
 
     interface BasePilesView extends BaseView<BasePilesPresenter> {
         void showView();
+        void showPiles();
     }
 
     interface BasePilesPresenter extends BasePresenter {
         void loadView();
+        void loadPiles();
     }
 
     interface BaseResidentsView extends BaseView<BaseResidentsPresenter> {

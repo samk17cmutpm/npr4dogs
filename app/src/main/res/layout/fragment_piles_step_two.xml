@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Step 1:"
+            android:text="Step 2:"
             android:id="@+id/textView11"
             android:layout_marginLeft="37dp"
             android:layout_marginStart="37dp"
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Grab a DNA swab test kit "
+            android:text="Grab a pile test kit and"
             android:id="@+id/textView14"
             android:layout_below="@+id/textView11"
             android:layout_alignLeft="@+id/textView11"
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="and scan the barcode"
+            android:text="scan the barcode"
             android:id="@+id/textView15"
             android:layout_below="@+id/textView14"
             android:layout_alignLeft="@+id/textView14"
@@ -68,12 +68,37 @@
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Get Started"
+                android:text="Scan Barcode"
                 android:textStyle="bold"
                 android:layout_below="@+id/view"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/sign_in_radius_button" />
 
         </com.andexert.library.RippleView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Note: This is different than "
+            android:id="@+id/textView48"
+            android:layout_below="@+id/textView15"
+            android:layout_alignLeft="@+id/textView15"
+            android:layout_alignStart="@+id/textView15"
+            android:layout_marginTop="29dp"
+            android:textSize="@dimen/guide"
+            android:textStyle="italic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="the swab test kit."
+            android:id="@+id/textView49"
+            android:layout_below="@+id/textView48"
+            android:layout_alignLeft="@+id/textView48"
+            android:layout_alignStart="@+id/textView48"
+            android:textSize="@dimen/guide"
+            android:textStyle="italic" />
     </RelativeLayout>
 </FrameLayout>

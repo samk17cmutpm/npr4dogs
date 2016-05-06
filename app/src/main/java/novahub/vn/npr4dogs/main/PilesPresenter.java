@@ -17,6 +17,11 @@ public class PilesPresenter implements MainContract.BasePilesPresenter {
     }
 
     @Override
+    public void loadPiles() {
+        pilesView.showPiles();
+    }
+
+    @Override
     public void start() {
 
     }

@@ -8,4 +8,5 @@ public interface Base {
     public static final int TABS = 4;
     public static final int RESIDENTS = 2;
     public static final int ADD_A_DOG = 7;
+    public static final int PILES = 5;
 }

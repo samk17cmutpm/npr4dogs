@@ -1,0 +1,155 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="novahub.vn.npr4dogs.piles.PilesStepFourFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Barcode  Scan Successful !"
+            android:id="@+id/textView50"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/tab.selected"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Step 4:"
+            android:id="@+id/textView51"
+            android:layout_below="@+id/textView50"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="33dp"
+            android:layout_marginStart="33dp"
+            android:textSize="@dimen/titile" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Use the kit collect a "
+            android:id="@+id/textView52"
+            android:layout_below="@+id/textView51"
+            android:layout_alignLeft="@+id/textView51"
+            android:layout_alignStart="@+id/textView51"
+            android:textSize="@dimen/guide" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="sample about the size of"
+            android:id="@+id/textView53"
+            android:layout_below="@+id/textView52"
+            android:layout_alignLeft="@+id/textView52"
+            android:layout_alignStart="@+id/textView52"
+            android:textSize="@dimen/guide" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="your thumb"
+            android:id="@+id/textView54"
+            android:layout_below="@+id/textView53"
+            android:layout_alignLeft="@+id/textView53"
+            android:layout_alignStart="@+id/textView53"
+            android:textSize="@dimen/guide" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Tip: Make sure to get the "
+            android:id="@+id/textView55"
+            android:layout_below="@+id/textView54"
+            android:layout_alignLeft="@+id/textView54"
+            android:layout_alignStart="@+id/textView54"
+            android:layout_marginTop="33dp"
+            android:textSize="@dimen/guide" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="outside surface"
+            android:id="@+id/textView56"
+            android:layout_below="@+id/textView55"
+            android:layout_alignLeft="@+id/textView55"
+            android:layout_alignStart="@+id/textView55"
+            android:textSize="@dimen/guide"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=" of the"
+            android:id="@+id/textView59"
+            android:layout_above="@+id/textView57"
+            android:layout_alignRight="@+id/textView57"
+            android:layout_alignEnd="@+id/textView57"
+            android:textSize="@dimen/guide" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="poop -- this where the"
+            android:id="@+id/textView57"
+            android:layout_below="@+id/textView56"
+            android:layout_alignLeft="@+id/textView56"
+            android:layout_alignStart="@+id/textView56"
+            android:textSize="@dimen/guide" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="dog&apos;s DNA will be found"
+            android:id="@+id/textView58"
+            android:layout_below="@+id/textView57"
+            android:layout_alignLeft="@+id/textView57"
+            android:layout_alignStart="@+id/textView57"
+            android:textSize="@dimen/guide" />
+
+        <com.andexert.library.RippleView
+            android:id="@+id/rpv_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            rv_centered="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp">
+
+            <Button
+                android:id="@+id/bt_sign_in"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Next"
+                android:textStyle="bold"
+                android:layout_below="@+id/view"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/sign_in_radius_button" />
+
+        </com.andexert.library.RippleView>
+
+    </RelativeLayout>
+
+</FrameLayout>

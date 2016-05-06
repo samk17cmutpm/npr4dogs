@@ -1,36 +1,33 @@
-package novahub.vn.npr4dogs.main;
+package novahub.vn.npr4dogs.piles;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.andexert.library.RippleView;
 
-import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
-import novahub.vn.npr4dogs.piles.PilesActivity;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PilesFragment extends BaseFragment implements MainContract.BasePilesView, Base {
+public class PilesStepTwoFragment extends BaseFragment implements PilesContract.View {
 
-    private MainContract.BasePilesPresenter presenter;
+    private PilesContract.Presenter presenter;
     private View root;
     private RippleView rippleView;
-
-    public PilesFragment() {
+    public PilesStepTwoFragment() {
         // Required empty public constructor
     }
 
-    public static PilesFragment newInstance() {
-        PilesFragment pilesFragment = new PilesFragment();
-        return pilesFragment;
+    public static PilesStepTwoFragment newInstance() {
+        PilesStepTwoFragment pilesStepTwoFragment = new PilesStepTwoFragment();
+        return pilesStepTwoFragment;
     }
 
 
@@ -38,13 +35,14 @@ public class PilesFragment extends BaseFragment implements MainContract.BasePile
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        root = inflater.inflate(R.layout.fragment_piles, container, false);
-        rippleView = (RippleView) root.findViewById(R.id.go_to_piles);
+        root = inflater.inflate(R.layout.fragment_piles_step_two, container, false);
+        rippleView = (RippleView) root.findViewById(R.id.rpv_scan_barcode);
         rippleView.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
 
             @Override
             public void onComplete(RippleView rippleView) {
-                presenter.loadPiles();
+                Log.d("Sample", "Ripple completed");
+                presenter.goNext(2);
             }
 
         });
@@ -57,13 +55,7 @@ public class PilesFragment extends BaseFragment implements MainContract.BasePile
     }
 
     @Override
-    public void showPiles() {
-        Intent intent = new Intent(getContext(), PilesActivity.class);
-        getContext().startActivity(intent);
-    }
-
-    @Override
-    public void setPresenter(MainContract.BasePilesPresenter prensenter) {
+    public void setPresenter(PilesContract.Presenter prensenter) {
         this.presenter = prensenter;
     }
 }

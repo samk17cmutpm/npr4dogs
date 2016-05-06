@@ -33,7 +33,7 @@
             android:layout_alignLeft="@+id/textView16"
             android:layout_alignStart="@+id/textView16"
             android:layout_marginTop="30dp"
-            android:textSize="35sp" />
+            android:textSize="@dimen/titile" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
             android:layout_alignLeft="@+id/textView17"
             android:layout_alignStart="@+id/textView17"
             android:layout_marginTop="15dp"
-            android:textSize="25sp" />
+            android:textSize="@dimen/guide" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
             android:layout_below="@+id/textView18"
             android:layout_alignLeft="@+id/textView18"
             android:layout_alignStart="@+id/textView18"
-            android:textSize="25sp"
+            android:textSize="@dimen/guide"
             android:layout_marginTop="5dp" />
 
         <TextView
@@ -68,7 +68,7 @@
             android:layout_below="@+id/textView19"
             android:layout_alignLeft="@+id/textView19"
             android:layout_alignStart="@+id/textView19"
-            android:textSize="25sp"
+            android:textSize="@dimen/guide"
             android:layout_marginTop="5dp" />
 
         <com.andexert.library.RippleView

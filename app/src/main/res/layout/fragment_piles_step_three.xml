@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Step 1:"
+            android:text="Step 3:"
             android:id="@+id/textView11"
             android:layout_marginLeft="37dp"
             android:layout_marginStart="37dp"
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Grab a DNA swab test kit "
+            android:text="Take a photo of the pile in"
             android:id="@+id/textView14"
             android:layout_below="@+id/textView11"
             android:layout_alignLeft="@+id/textView11"
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="and scan the barcode"
+            android:text="its original location"
             android:id="@+id/textView15"
             android:layout_below="@+id/textView14"
             android:layout_alignLeft="@+id/textView14"
@@ -52,7 +52,7 @@
 
 
         <com.andexert.library.RippleView
-            android:id="@+id/rpv_scan_barcode"
+            android:id="@+id/rpv_take_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             rv_centered="true"
@@ -68,12 +68,13 @@
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Get Started"
+                android:text="Take Photo"
                 android:textStyle="bold"
                 android:layout_below="@+id/view"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/sign_in_radius_button" />
 
         </com.andexert.library.RippleView>
+
     </RelativeLayout>
 </FrameLayout>
