@@ -1,0 +1,176 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="novahub.vn.npr4dogs.main.AddADogPastFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/background"
+            android:layout_gravity="center_horizontal|top" >
+
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.andexert.library.RippleView
+                    android:id="@+id/rpv_residents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    rv_centered="true"
+                    android:layout_weight="0.37"
+                    android:padding="10dp"
+                    android:background="@drawable/cancle_backgrounnd"
+                    android:layout_alignTop="@+id/rpv_edit"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:id="@+id/imageView23"
+                            android:src="@drawable/back_button"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Residents"
+                            android:id="@+id/dsdsddsd"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center_vertical|center|center_horizontal"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="50dp" />
+
+                    </RelativeLayout>
+
+
+                </com.andexert.library.RippleView>
+
+                <com.andexert.library.RippleView
+                    android:id="@+id/rpv_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    rv_centered="true"
+                    android:layout_weight="0.37"
+                    android:padding="10dp"
+                    android:background="@drawable/cancle_backgrounnd"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Edit"
+                        android:id="@+id/dsdsds"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_vertical|center|center_horizontal"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center_horizontal" />
+
+                </com.andexert.library.RippleView>
+
+
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/imageView24"
+                android:src="@drawable/avatar"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Jimmy Bates"
+                android:id="@+id/textView63"
+                android:layout_alignTop="@+id/imageView24"
+                android:layout_toRightOf="@+id/imageView24"
+                android:layout_toEndOf="@+id/imageView24"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="j.bates@yahoo.com"
+                android:id="@+id/textView64"
+                android:layout_below="@+id/textView63"
+                android:layout_toRightOf="@+id/imageView24"
+                android:layout_toEndOf="@+id/imageView24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Riverfront Properties"
+                android:id="@+id/textView65"
+                android:layout_below="@+id/textView64"
+                android:layout_toRightOf="@+id/imageView24"
+                android:layout_toEndOf="@+id/imageView24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Unit # 107"
+                android:id="@+id/textView66"
+                android:layout_below="@+id/textView65"
+                android:layout_toRightOf="@+id/imageView24"
+                android:layout_toEndOf="@+id/imageView24" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/imageView24"
+                android:layout_toEndOf="@+id/imageView24"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toRightOf="@+id/imageView24">
+                <se.emilsjolander.stickylistheaders.ExpandableStickyListHeadersListView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:drawSelectorOnTop="true"
+                    android:padding="16dp"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:fastScrollEnabled="true"
+                    android:overScrollMode="never"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</FrameLayout>

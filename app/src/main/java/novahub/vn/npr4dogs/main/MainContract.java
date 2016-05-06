@@ -67,4 +67,12 @@ public interface MainContract {
         void loadView();
     }
 
+    interface BaseAddADogPastView extends BaseView<BaseAddADogPastPresenter> {
+        void showView();
+    }
+
+    interface BaseAddADogPastPresenter extends BasePresenter {
+        void loadView();
+    }
+
 }

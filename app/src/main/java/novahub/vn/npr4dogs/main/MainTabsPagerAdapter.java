@@ -15,6 +15,7 @@ public class MainTabsPagerAdapter extends SmartFragmentStatePagerAdapter impleme
     private PilesPresenter pilesPresenter;
     private ResidentsPresenter residentsPresenter;
     private SettingsPresenter settingsPresenter;
+    private AddADogPastPresenter addADogPastPresenter;
 
     public MainTabsPagerAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);
@@ -25,9 +26,12 @@ public class MainTabsPagerAdapter extends SmartFragmentStatePagerAdapter impleme
 
         switch (position) {
             case 0:
-                fragment = new AddADogFragment().newInstance();
-                addADogPresenter = new
-                        AddADogPresenter((MainContract.BaseAddADogView) fragment);
+//                fragment = new AddADogFragment().newInstance();
+//                addADogPresenter = new
+//                        AddADogPresenter((MainContract.BaseAddADogView) fragment);
+                fragment = new AddADogPastFragment().newInstance();
+                addADogPastPresenter = new
+                        AddADogPastPresenter((MainContract.BaseAddADogPastView) fragment);
                 return fragment;
             case 1:
                 fragment = new PilesFragment().newInstance();
