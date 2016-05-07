@@ -52,6 +52,11 @@ public class StepFiveFragment extends BaseFragment implements AddADogContract.Vi
     }
 
     @Override
+    public void comeBack() {
+
+    }
+
+    @Override
     public void setPresenter(AddADogContract.Presenter prensenter) {
         this.presenter = prensenter;
     }

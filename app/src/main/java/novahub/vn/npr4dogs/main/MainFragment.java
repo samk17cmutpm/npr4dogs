@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 
+import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
 import novahub.vn.npr4dogs.lib.NonSwipeableViewPager;
@@ -20,18 +21,26 @@ import novahub.vn.npr4dogs.utils.ActivityUtils;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainFragment extends BaseFragment implements MainContract.View {
+public class MainFragment extends BaseFragment implements MainContract.View, Base {
 
     private MainContract.Presenter presenter;
     private View root;
     private NonSwipeableViewPager viewPager;
+    private boolean from;
+    private int page;
+    private AHBottomNavigation bottomNavigation;
 
     public MainFragment() {
         // Required empty public constructor
     }
 
-    public static MainFragment newInstance() {
+    public static MainFragment newInstance(boolean from, int page) {
+
         MainFragment mainFragment = new MainFragment();
+        Bundle args = new Bundle();
+        args.putInt(PAGE, page);
+        args.putBoolean(FROM, from);
+        mainFragment.setArguments(args);
         return mainFragment;
     }
 
@@ -40,15 +49,22 @@ public class MainFragment extends BaseFragment implements MainContract.View {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_main, container, false);
+        page = getArguments().getInt(PAGE, 0);
+        from = getArguments().getBoolean(FROM, false);
         presenter.loadBottomNavigation();
         presenter.loadViewPagers();
+        if (from) {
+            presenter.loadTabDetails(page);
+        } else {
+            bottomNavigation.setCurrentItem(0);
+        }
         return root;
     }
 
     @Override
     public void showBottomNavigation() {
 
-        AHBottomNavigation bottomNavigation = (AHBottomNavigation) root.findViewById(R.id.bottom_navigation);
+        bottomNavigation = (AHBottomNavigation) root.findViewById(R.id.bottom_navigation);
 
         // Create items
         AHBottomNavigationItem tabAddADog =
@@ -90,7 +106,6 @@ public class MainFragment extends BaseFragment implements MainContract.View {
         bottomNavigation.setColored(true);
 
         // Set current item programmatically
-        bottomNavigation.setCurrentItem(0);
 
         // Customize notification (title, background, typeface)
         bottomNavigation.setNotificationBackgroundColor(Color.parseColor("#FF4081"));

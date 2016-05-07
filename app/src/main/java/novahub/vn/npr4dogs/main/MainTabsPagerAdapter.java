@@ -16,6 +16,8 @@ public class MainTabsPagerAdapter extends SmartFragmentStatePagerAdapter impleme
     private ResidentsPresenter residentsPresenter;
     private SettingsPresenter settingsPresenter;
     private AddADogPastPresenter addADogPastPresenter;
+    private TestANewPilePresenter testANewPilePresenter;
+    private ResidentsDetailPresenter residentsDetailPresenter;
 
     public MainTabsPagerAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);
@@ -26,12 +28,9 @@ public class MainTabsPagerAdapter extends SmartFragmentStatePagerAdapter impleme
 
         switch (position) {
             case 0:
-//                fragment = new AddADogFragment().newInstance();
-//                addADogPresenter = new
-//                        AddADogPresenter((MainContract.BaseAddADogView) fragment);
-                fragment = new AddADogPastFragment().newInstance();
-                addADogPastPresenter = new
-                        AddADogPastPresenter((MainContract.BaseAddADogPastView) fragment);
+                fragment = new AddADogFragment().newInstance();
+                addADogPresenter = new
+                        AddADogPresenter((MainContract.BaseAddADogView) fragment);
                 return fragment;
             case 1:
                 fragment = new PilesFragment().newInstance();
@@ -48,6 +47,22 @@ public class MainTabsPagerAdapter extends SmartFragmentStatePagerAdapter impleme
                 settingsPresenter = new
                         SettingsPresenter((MainContract.BaseSettingsView) fragment);
                 return fragment;
+            case 4:
+                fragment = new AddADogPastFragment().newInstance();
+                addADogPastPresenter = new
+                        AddADogPastPresenter((MainContract.BaseAddADogPastView) fragment);
+                return fragment;
+            case 5:
+                fragment = new TestANewPileFragment().newInstance();
+                testANewPilePresenter = new
+                        TestANewPilePresenter((MainContract.BaseTestANewPileView) fragment);
+                return fragment;
+            case 6:
+                fragment = new ResidentsDetailFragment().newInstance();
+                residentsDetailPresenter = new
+                        ResidentsDetailPresenter((MainContract.BaseResidentsDetailView) fragment);
+                return fragment;
+
         }
         return null;
     }

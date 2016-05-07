@@ -4,6 +4,7 @@ import java.util.List;
 
 import novahub.vn.npr4dogs.BasePresenter;
 import novahub.vn.npr4dogs.BaseView;
+import novahub.vn.npr4dogs.data.Pile;
 import novahub.vn.npr4dogs.data.Resident;
 
 /**
@@ -72,6 +73,24 @@ public interface MainContract {
     }
 
     interface BaseAddADogPastPresenter extends BasePresenter {
+        void loadView();
+    }
+
+    interface BaseTestANewPileView extends BaseView<BaseTestANewPilePresenter> {
+        void showView();
+        void showRecyclerView(List<Pile> piles);
+    }
+
+    interface BaseTestANewPilePresenter extends BasePresenter {
+        void loadView();
+        void loadRecyclerView();
+    }
+
+    interface BaseResidentsDetailView extends BaseView<BaseResidentsDetailPresenter> {
+        void showView();
+    }
+
+    interface BaseResidentsDetailPresenter extends BasePresenter {
         void loadView();
     }
 

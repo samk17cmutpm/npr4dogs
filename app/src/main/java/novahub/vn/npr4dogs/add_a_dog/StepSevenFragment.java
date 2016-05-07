@@ -1,6 +1,7 @@
 package novahub.vn.npr4dogs.add_a_dog;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,12 +10,14 @@ import android.view.ViewGroup;
 
 import com.andexert.library.RippleView;
 
+import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.R;
+import novahub.vn.npr4dogs.main.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class StepSevenFragment extends Fragment implements AddADogContract.View {
+public class StepSevenFragment extends Fragment implements AddADogContract.View, Base{
 
     private AddADogContract.Presenter presenter;
     private View root;
@@ -39,7 +42,7 @@ public class StepSevenFragment extends Fragment implements AddADogContract.View 
 
             @Override
             public void onComplete(RippleView rippleView) {
-
+                presenter.finish();
             }
 
         });
@@ -49,6 +52,13 @@ public class StepSevenFragment extends Fragment implements AddADogContract.View 
     @Override
     public void showView() {
 
+    }
+
+    @Override
+    public void comeBack() {
+        Intent intent = new Intent(getContext(), MainActivity.class);
+        intent.putExtra(PAGE, 1);
+        getContext().startActivity(intent);
     }
 
     @Override

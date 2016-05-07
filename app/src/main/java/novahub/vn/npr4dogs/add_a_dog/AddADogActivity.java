@@ -49,4 +49,11 @@ public class AddADogActivity extends AppCompatActivity {
 
     }
 
+    public void comeBack(int page) {
+
+        Intent intent = new Intent(AddADogActivity.this, MainActivity.class);
+
+    }
+
+
 }

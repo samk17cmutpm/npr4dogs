@@ -34,7 +34,7 @@ public class AddADogPresenter implements AddADogContract.Presenter {
 
     @Override
     public void finish() {
-
+        view.comeBack();
     }
 
     @Override

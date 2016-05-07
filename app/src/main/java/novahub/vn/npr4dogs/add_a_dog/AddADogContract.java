@@ -9,6 +9,7 @@ import novahub.vn.npr4dogs.BaseView;
 public interface AddADogContract {
     interface View extends BaseView<Presenter> {
         void showView();
+        void comeBack();
     }
     interface Presenter extends BasePresenter {
         void loadView();
