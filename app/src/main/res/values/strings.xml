@@ -27,4 +27,5 @@
     <string name="tab_setting">Settings</string>
     <string name="title_activity_add_adog">AddADogActivity</string>
     <string name="title_activity_piles">PilesActivity</string>
+    <string name="title_activity_resident">ResidentActivity</string>
 </resources>
