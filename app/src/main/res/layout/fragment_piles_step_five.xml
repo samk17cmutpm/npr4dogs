@@ -141,7 +141,7 @@
             android:textSize="@dimen/guide.small" />
 
         <com.andexert.library.RippleView
-            android:id="@+id/rpv_next"
+            android:id="@+id/rpv_finish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             rv_centered="true"

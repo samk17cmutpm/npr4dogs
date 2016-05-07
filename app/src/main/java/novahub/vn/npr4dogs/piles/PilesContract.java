@@ -10,6 +10,7 @@ public interface PilesContract {
 
     interface View extends BaseView<Presenter> {
         void showView();
+        void comeBack();
     }
     interface Presenter extends BasePresenter {
         void loadView();

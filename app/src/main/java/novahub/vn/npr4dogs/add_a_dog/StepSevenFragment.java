@@ -59,6 +59,7 @@ public class StepSevenFragment extends Fragment implements AddADogContract.View,
         Intent intent = new Intent(getContext(), MainActivity.class);
         intent.putExtra(PAGE, 1);
         getContext().startActivity(intent);
+        getActivity().finish();
     }
 
     @Override

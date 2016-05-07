@@ -28,7 +28,7 @@ public class PilesPresenter implements PilesContract.Presenter {
 
     @Override
     public void finish() {
-
+        pilesView.comeBack();
     }
 
     @Override

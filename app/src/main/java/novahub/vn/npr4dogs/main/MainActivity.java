@@ -25,10 +25,21 @@ public class MainActivity extends AppCompatActivity implements Base{
         if (mainFragment == null) {
 
             int page = getIntent().getIntExtra(PAGE, 0);
-            if (page == 1) {
-                mainFragment = MainFragment.newInstance(true, 4);
-            } else {
-                mainFragment = MainFragment.newInstance(false, 0);
+            switch (page) {
+                case 0:
+                    mainFragment = MainFragment.newInstance(false, 0);
+                    break;
+                case 1:
+                    mainFragment = MainFragment.newInstance(true, 4);
+                    break;
+                case 2:
+                    mainFragment = MainFragment.newInstance(true, 5);
+                    break;
+                case 3:
+                    mainFragment = MainFragment.newInstance(true, 6);
+                    break;
+                default:
+                    mainFragment = MainFragment.newInstance(false, 0);
             }
             ActivityUtils.addFragmentToActivity(
                 getSupportFragmentManager(), mainFragment, R.id.contentFrame

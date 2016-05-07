@@ -1,6 +1,7 @@
 package novahub.vn.npr4dogs.piles;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Html;
@@ -9,16 +10,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.andexert.library.RippleView;
+
+import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
+import novahub.vn.npr4dogs.main.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PilesStepFiveFragment extends BaseFragment implements PilesContract.View {
+public class PilesStepFiveFragment extends BaseFragment implements PilesContract.View, Base {
 
     private PilesContract.Presenter presenter;
     private View root;
+    private RippleView rippleView;
     public PilesStepFiveFragment() {
         // Required empty public constructor
     }
@@ -48,12 +54,30 @@ public class PilesStepFiveFragment extends BaseFragment implements PilesContract
         textViewAdd3.setText(Html.fromHtml(htmlString3));
         textViewAdd4.setText(Html.fromHtml(htmlString4));
 
+        rippleView = (RippleView) root.findViewById(R.id.rpv_finish);
+        rippleView.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+
+            @Override
+            public void onComplete(RippleView rippleView) {
+                presenter.finish();
+            }
+
+        });
+
         return root;
     }
 
     @Override
     public void showView() {
 
+    }
+
+    @Override
+    public void comeBack() {
+        Intent intent = new Intent(getContext(), MainActivity.class);
+        intent.putExtra(PAGE, 2);
+        getContext().startActivity(intent);
+        getActivity().finish();
     }
 
     @Override

@@ -55,6 +55,11 @@ public class PilesStepOneFragment extends BaseFragment implements PilesContract.
     }
 
     @Override
+    public void comeBack() {
+
+    }
+
+    @Override
     public void setPresenter(PilesContract.Presenter prensenter) {
         this.presenter = prensenter;
     }
