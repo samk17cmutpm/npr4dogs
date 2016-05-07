@@ -31,7 +31,7 @@ public class UnderlineTextView extends TextView {
 
     private void init(Context context, AttributeSet attrs) {
         Resources r = getResources();
-        mUnderlineHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, r.getDisplayMetrics());
+        mUnderlineHeight = 0;//(int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, r.getDisplayMetrics());
     }
 
     @Override

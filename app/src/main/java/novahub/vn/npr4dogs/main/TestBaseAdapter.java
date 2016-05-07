@@ -4,9 +4,11 @@ package novahub.vn.npr4dogs.main;
  * Created by samnguyen on 5/7/16.
  */
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
@@ -14,58 +16,85 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import novahub.vn.npr4dogs.R;
+import novahub.vn.npr4dogs.data.Pile;
 import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
 
-public class TestBaseAdapter extends BaseAdapter implements
+public class TestBaseAdapter extends ArrayAdapter<Pile> implements
         StickyListHeadersAdapter, SectionIndexer {
 
     private final Context mContext;
     private String[] mCountries;
     private int[] mSectionIndices;
-    private Character[] mSectionLetters;
+    private ArrayList<String> mSectionLetters;
     private LayoutInflater mInflater;
+    private ArrayList<Pile> piles;
 
-    public TestBaseAdapter(Context context) {
+    public TestBaseAdapter(Context context, ArrayList<Pile> piles) {
+        super(context, 0, piles);
+        this.piles = piles;
         mContext = context;
         mInflater = LayoutInflater.from(context);
         mCountries = context.getResources().getStringArray(R.array.countries);
-        mSectionIndices = getSectionIndices();
-        mSectionLetters = getSectionLetters();
+//        mSectionIndices = getSectionIndices();
+        mSectionLetters = new ArrayList<>();
+        mSectionLetters.add("Dogs");
+        mSectionLetters.add("Piles");
+
+        mSectionIndices = new int[2];
+        mSectionIndices[0] = 0;
+        mSectionIndices[1] = 2;
+
+
     }
 
-    private int[] getSectionIndices() {
-        ArrayList<Integer> sectionIndices = new ArrayList<Integer>();
-        char lastFirstChar = mCountries[0].charAt(0);
-        sectionIndices.add(0);
-        for (int i = 1; i < mCountries.length; i++) {
-            if (mCountries[i].charAt(0) != lastFirstChar) {
-                lastFirstChar = mCountries[i].charAt(0);
-                sectionIndices.add(i);
-            }
-        }
-        int[] sections = new int[sectionIndices.size()];
-        for (int i = 0; i < sectionIndices.size(); i++) {
-            sections[i] = sectionIndices.get(i);
-        }
-        return sections;
+
+
+//    private int[] getSectionIndices() {
+//        ArrayList<Integer> sectionIndices = new ArrayList<Integer>();
+//        char lastFirstChar = mCountries[0].charAt(0);
+//        sectionIndices.add(0);
+//        for (int i = 1; i < mCountries.length; i++) {
+//            if (mCountries[i].charAt(0) != lastFirstChar) {
+//                lastFirstChar = mCountries[i].charAt(0);
+//                sectionIndices.add(i);
+//            }
+//        }
+//        int[] sections = new int[sectionIndices.size()];
+//        for (int i = 0; i < sectionIndices.size(); i++) {
+//            sections[i] = sectionIndices.get(i);
+//        }
+//        return sections;
+//    }
+//
+//    private Character[] getSectionLetters() {
+//        Character[] letters = new Character[mSectionIndices.length];
+//        for (int i = 0; i < mSectionIndices.length; i++) {
+//            letters[i] = mCountries[mSectionIndices[i]].charAt(0);
+//        }
+//        return letters;
+//    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (position < 2) {
+            return 0;
+        } else return 1;
     }
 
-    private Character[] getSectionLetters() {
-        Character[] letters = new Character[mSectionIndices.length];
-        for (int i = 0; i < mSectionIndices.length; i++) {
-            letters[i] = mCountries[mSectionIndices[i]].charAt(0);
-        }
-        return letters;
+    // Total number of types is the number of enum values
+    @Override
+    public int getViewTypeCount() {
+        return piles.size();
     }
 
     @Override
     public int getCount() {
-        return mCountries.length;
+        return piles.size();
     }
 
     @Override
-    public Object getItem(int position) {
-        return mCountries[position];
+    public Pile getItem(int position) {
+        return this.piles.get(position);
     }
 
     @Override
@@ -79,16 +108,26 @@ public class TestBaseAdapter extends BaseAdapter implements
 
         if (convertView == null) {
             holder = new ViewHolder();
-            convertView = mInflater.inflate(R.layout.test_list_item_layout, parent, false);
-            holder.text = (TextView) convertView.findViewById(R.id.text);
+            int type = getItemViewType(position);
+            convertView = getInflatedLayoutForType(type, parent);
+//            convertView = mInflater.inflate(R.layout.test_list_item_layout, parent, false);
+//            holder.text = (TextView) convertView.findViewById(R.id.text);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.text.setText(mCountries[position]);
+//        holder.text.setText(mCountries[position]);
 
         return convertView;
+    }
+
+    private View getInflatedLayoutForType(int type, ViewGroup viewGroup) {
+        if (type == 0) {
+            return mInflater.inflate(R.layout.test_list_item_layout, viewGroup, false);
+        } else  {
+            return mInflater.inflate(R.layout.test_list, viewGroup, false);
+        }
     }
 
     @Override
@@ -105,7 +144,12 @@ public class TestBaseAdapter extends BaseAdapter implements
         }
 
         // set header text as first char in name
-        CharSequence headerChar = mCountries[position].subSequence(0, 1);
+//        CharSequence headerChar = mCountries[position].subSequence(0, 1);
+        String headerChar = "Piles";
+        if (position < 2) {
+            headerChar = "Dogs";
+        }
+
         holder.text.setText(headerChar);
 
         return convertView;
@@ -148,20 +192,20 @@ public class TestBaseAdapter extends BaseAdapter implements
 
     @Override
     public Object[] getSections() {
-        return mSectionLetters;
+        return null;
     }
 
     public void clear() {
         mCountries = new String[0];
         mSectionIndices = new int[0];
-        mSectionLetters = new Character[0];
+//        mSectionLetters = new Character[0];
         notifyDataSetChanged();
     }
 
     public void restore() {
         mCountries = mContext.getResources().getStringArray(R.array.countries);
-        mSectionIndices = getSectionIndices();
-        mSectionLetters = getSectionLetters();
+//        mSectionIndices = getSectionIndices();
+//        mSectionLetters = getSectionLetters();
         notifyDataSetChanged();
     }
 

@@ -10,10 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.WeakHashMap;
 
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
+import novahub.vn.npr4dogs.data.Pile;
 import se.emilsjolander.stickylistheaders.ExpandableStickyListHeadersListView;
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 
@@ -42,11 +44,13 @@ public class AddADogPastFragment extends BaseFragment implements MainContract.Ba
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_add_adog_past, container, false);
         mListView = (ExpandableStickyListHeadersListView) root.findViewById(R.id.list);
-
-        Log.d("===========>", "Du ma may day roi");
+        ArrayList<Pile> piles = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            piles.add(new Pile(i));
+        }
         //custom expand/collapse animation
         mListView.setAnimExecutor(new AnimationExecutor());
-        mTestBaseAdapter = new TestBaseAdapter(getContext());
+        mTestBaseAdapter = new TestBaseAdapter(getContext(), piles);
         mListView.setAdapter(mTestBaseAdapter);
         mListView.setOnHeaderClickListener(new StickyListHeadersListView.OnHeaderClickListener() {
             @Override
