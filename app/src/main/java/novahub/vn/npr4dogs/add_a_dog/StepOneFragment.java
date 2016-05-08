@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.andexert.library.RippleView;
 
+import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
 import novahub.vn.npr4dogs.scan_barcode.ScanBarcodeActivity;
@@ -18,7 +19,7 @@ import novahub.vn.npr4dogs.scan_barcode.ScanBarcodeActivity;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class StepOneFragment extends BaseFragment implements AddADogContract.View{
+public class StepOneFragment extends BaseFragment implements AddADogContract.View, Base {
     private AddADogContract.Presenter presenter;
     private View root;
     private RippleView rippleView;
@@ -43,6 +44,8 @@ public class StepOneFragment extends BaseFragment implements AddADogContract.Vie
             @Override
             public void onComplete(RippleView rippleView) {
                 Intent intent = new Intent(getContext(), ScanBarcodeActivity.class);
+                intent.putExtra(FROM, FROM_ADD_A_DOG);
+                intent.putExtra(PAGE, GO_TO_BEGIN_SURVEY);
                 getContext().startActivity(intent);
                 getActivity().finish();
 //                presenter.goNext(1);

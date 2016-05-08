@@ -36,7 +36,7 @@ public class AddADogActivity extends AppCompatActivity implements Base {
         indicator.setViewPager(viewPager);
         addADogPagerAdapter.registerDataSetObserver(indicator.getDataSetObserver());
 
-        rippleViewCancel = (RippleView) findViewById(R.id.rpv_edit);
+        rippleViewCancel = (RippleView) findViewById(R.id.rpv_done);
         rippleViewCancel.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
             public void onComplete(RippleView rippleView) {
@@ -47,14 +47,11 @@ public class AddADogActivity extends AppCompatActivity implements Base {
 
         });
 
-        int page = getIntent().getIntExtra(PAGE, 0);
-        switch (page) {
-            case 1:
-                viewPager.setCurrentItem(2, false);
-                break;
-            case 2:
-                viewPager.setCurrentItem(1,false);
-                break;
+
+        boolean isFromAction = getIntent().getBooleanExtra(IS_FROM_ACTION, false);
+        if (isFromAction) {
+            int page = getIntent().getIntExtra(PAGE, 0);
+            viewPager.setCurrentItem(page, false);
         }
 
     }

@@ -10,14 +10,16 @@ import android.view.ViewGroup;
 
 import com.andexert.library.RippleView;
 
+import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
+import novahub.vn.npr4dogs.card_io.ScanCardIOActivity;
 import novahub.vn.npr4dogs.take_photo.TakeAPhotoActivity;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class StepFourFragment extends BaseFragment implements AddADogContract.View {
+public class StepFourFragment extends BaseFragment implements AddADogContract.View, Base {
 
     private AddADogContract.Presenter presenter;
     private View root;
@@ -42,9 +44,10 @@ public class StepFourFragment extends BaseFragment implements AddADogContract.Vi
 
             @Override
             public void onComplete(RippleView rippleView) {
-//                presenter.goNext(4);
                 Intent intent = new Intent(getContext(), TakeAPhotoActivity.class);
-                getActivity().startActivity(intent);
+                intent.putExtra(FROM, FROM_ADD_A_DOG);
+                intent.putExtra(PAGE, GO_TO_TAKE_PHOTO_OWNER);
+                getContext().startActivity(intent);
                 getActivity().finish();
             }
 

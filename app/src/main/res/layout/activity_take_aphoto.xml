@@ -17,24 +17,76 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/background"
-            app:popupTheme="@style/AppTheme.PopupOverlay" >
-
+            app:popupTheme="@style/AppTheme.PopupOverlay">
             <RelativeLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:weightSum="1">
+                android:layout_height="match_parent">
 
-                <TextView
+                <com.andexert.library.RippleView
+                    android:id="@+id/rpv_retry"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Take Photo "
-                    android:id="@+id/textView"
-                    android:textColor="@color/white"
+                    rv_centered="true"
+                    android:layout_weight="0.37"
+                    android:padding="10dp"
+                    android:background="@drawable/cancle_backgrounnd"
+                    android:layout_alignTop="@+id/rpv_done"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Retry"
+                            android:id="@+id/dsdsdfdfdsd"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center_vertical|center|center_horizontal"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="20dp" />
+
+                    </RelativeLayout>
+
+
+                </com.andexert.library.RippleView>
+
+                <com.andexert.library.RippleView
+                    android:id="@+id/rpv_done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    rv_centered="true"
+                    android:layout_weight="0.37"
+                    android:padding="10dp"
+                    android:background="@drawable/cancle_backgrounnd"
                     android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Done"
+                        android:id="@+id/dsdsds"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_vertical|center|center_horizontal"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center_horizontal" />
+
+                </com.andexert.library.RippleView>
+
+
+
             </RelativeLayout>
+
         </android.support.v7.widget.Toolbar>
 
 

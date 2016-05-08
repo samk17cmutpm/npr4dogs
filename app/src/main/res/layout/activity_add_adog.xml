@@ -25,7 +25,7 @@
                 android:weightSum="1">
 
                 <com.andexert.library.RippleView
-                    android:id="@+id/rpv_edit"
+                    android:id="@+id/rpv_done"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     rv_centered="true"

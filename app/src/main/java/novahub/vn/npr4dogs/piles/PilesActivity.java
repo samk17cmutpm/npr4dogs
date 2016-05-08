@@ -33,7 +33,7 @@ public class PilesActivity extends AppCompatActivity {
         indicator.setViewPager(viewPager);
         pilesPagerAdapter.registerDataSetObserver(indicator.getDataSetObserver());
 
-        rippleViewCancel = (RippleView) findViewById(R.id.rpv_edit);
+        rippleViewCancel = (RippleView) findViewById(R.id.rpv_done);
         rippleViewCancel.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
             public void onComplete(RippleView rippleView) {

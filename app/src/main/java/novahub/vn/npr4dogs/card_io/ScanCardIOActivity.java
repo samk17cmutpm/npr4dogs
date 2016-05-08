@@ -16,6 +16,7 @@ import io.card.payment.CreditCard;
 import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.R;
 import novahub.vn.npr4dogs.add_a_dog.AddADogActivity;
+import novahub.vn.npr4dogs.main.MainActivity;
 
 public class ScanCardIOActivity extends AppCompatActivity implements Base{
     private final String TAG = getClass().getName();
@@ -119,12 +120,25 @@ public class ScanCardIOActivity extends AppCompatActivity implements Base{
             scanOk = false;
         }
 
-        if (scanOk) {
-            Intent intent = new Intent(ScanCardIOActivity.this, AddADogActivity.class);
-            intent.putExtra(PAGE, 1);
-            startActivity(intent);
-            finish();
+
+        int from = getIntent().getIntExtra(FROM, 0);
+        int page = getIntent().getIntExtra(PAGE, 0);
+        Intent intent = null;
+        switch (from) {
+            case FROM_ADD_A_DOG:
+                intent = new Intent(ScanCardIOActivity.this, AddADogActivity.class);
+                break;
+
+            default:
+                intent = new Intent(ScanCardIOActivity.this, MainActivity.class);
+                break;
+
         }
+        intent.putExtra(IS_FROM_ACTION, true);
+        intent.putExtra(PAGE, page);
+        startActivity(intent);
+        finish();
+
 
     }
 

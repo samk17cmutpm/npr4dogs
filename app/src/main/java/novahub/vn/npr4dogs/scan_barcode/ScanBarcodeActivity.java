@@ -16,6 +16,7 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.R;
 import novahub.vn.npr4dogs.add_a_dog.AddADogActivity;
+import novahub.vn.npr4dogs.main.MainActivity;
 
 public class ScanBarcodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler, Base {
     private ZXingScannerView mScannerView;
@@ -53,8 +54,21 @@ public class ScanBarcodeActivity extends AppCompatActivity implements ZXingScann
 
         Toast.makeText(getApplicationContext(), "Scan suceessfull : " + rawResult.getText(), Toast.LENGTH_LONG).show();
 
-        Intent intent = new Intent(ScanBarcodeActivity.this, AddADogActivity.class);
-        intent.putExtra(PAGE, 2);
+        int from = getIntent().getIntExtra(FROM, 0);
+        int page = getIntent().getIntExtra(PAGE, 0);
+        Intent intent = null;
+        switch (from) {
+            case FROM_ADD_A_DOG:
+                intent = new Intent(ScanBarcodeActivity.this, AddADogActivity.class);
+                break;
+
+            default:
+                intent = new Intent(ScanBarcodeActivity.this, MainActivity.class);
+                break;
+
+        }
+        intent.putExtra(IS_FROM_ACTION, true);
+        intent.putExtra(PAGE, page);
         startActivity(intent);
         finish();
 
