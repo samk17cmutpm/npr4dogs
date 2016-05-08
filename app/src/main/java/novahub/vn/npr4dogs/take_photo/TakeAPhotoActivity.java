@@ -25,6 +25,7 @@ import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.R;
 import novahub.vn.npr4dogs.add_a_dog.AddADogActivity;
 import novahub.vn.npr4dogs.main.MainActivity;
+import novahub.vn.npr4dogs.piles.PilesActivity;
 
 public class TakeAPhotoActivity extends AppCompatActivity implements Base{
     public final String APP_TAG = "MyCustomApp";
@@ -88,6 +89,10 @@ public class TakeAPhotoActivity extends AppCompatActivity implements Base{
                 switch (from) {
                     case FROM_ADD_A_DOG:
                         intent = new Intent(TakeAPhotoActivity.this, AddADogActivity.class);
+                        break;
+
+                    case FROM_PILES:
+                        intent = new Intent(TakeAPhotoActivity.this, PilesActivity.class);
                         break;
 
                     default:

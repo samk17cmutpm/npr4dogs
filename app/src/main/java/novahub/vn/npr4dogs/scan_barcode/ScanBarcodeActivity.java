@@ -16,7 +16,9 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.R;
 import novahub.vn.npr4dogs.add_a_dog.AddADogActivity;
+import novahub.vn.npr4dogs.data.Pile;
 import novahub.vn.npr4dogs.main.MainActivity;
+import novahub.vn.npr4dogs.piles.PilesActivity;
 
 public class ScanBarcodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler, Base {
     private ZXingScannerView mScannerView;
@@ -60,6 +62,10 @@ public class ScanBarcodeActivity extends AppCompatActivity implements ZXingScann
         switch (from) {
             case FROM_ADD_A_DOG:
                 intent = new Intent(ScanBarcodeActivity.this, AddADogActivity.class);
+                break;
+
+            case FROM_PILES:
+                intent = new Intent(ScanBarcodeActivity.this, PilesActivity.class);
                 break;
 
             default:

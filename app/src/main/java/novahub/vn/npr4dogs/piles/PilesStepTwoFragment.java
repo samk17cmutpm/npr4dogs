@@ -1,6 +1,7 @@
 package novahub.vn.npr4dogs.piles;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -10,13 +11,15 @@ import android.view.ViewGroup;
 
 import com.andexert.library.RippleView;
 
+import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
+import novahub.vn.npr4dogs.scan_barcode.ScanBarcodeActivity;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PilesStepTwoFragment extends BaseFragment implements PilesContract.View {
+public class PilesStepTwoFragment extends BaseFragment implements PilesContract.View, Base {
 
     private PilesContract.Presenter presenter;
     private View root;
@@ -42,7 +45,13 @@ public class PilesStepTwoFragment extends BaseFragment implements PilesContract.
             @Override
             public void onComplete(RippleView rippleView) {
                 Log.d("Sample", "Ripple completed");
-                presenter.goNext(2);
+//                presenter.goNext(2);
+                Intent intent = new Intent(getContext(), ScanBarcodeActivity.class);
+                intent.putExtra(FROM, FROM_PILES);
+                intent.putExtra(PAGE, GO_TO_PILES_STEP_THREE);
+                getContext().startActivity(intent);
+                getActivity().finish();
+
             }
 
         });

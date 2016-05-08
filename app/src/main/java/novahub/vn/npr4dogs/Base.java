@@ -14,6 +14,7 @@ public interface Base {
     public static final String IS_FROM_ACTION = "IS_FROM_ACTION";
 
     public static final int FROM_ADD_A_DOG = 1;
+    public static final int FROM_PILES = 2;
     public static final int FROM_TAKE_PHOT0 = 2;
     public static final int FROM_SCAN_CARD_IO = 3;
     public static final int FROM_SCAN_BARCODE = 4;
@@ -23,6 +24,10 @@ public interface Base {
     public static final int GO_TO_TAKE_PHOTO_DOG = 3;
     public static final int GO_TO_TAKE_PHOTO_OWNER = 4;
     public static final int GO_TO_STEP_FIVE = 5;
+
+    public static final int GO_TO_PILES_STEP_THREE = 2;
+    public static final int GO_TO_PILES_STEP_FOUR = 3;
+    public static final int GO_TO_PILES_STEP_FIVE = 4;
 
 
 }
