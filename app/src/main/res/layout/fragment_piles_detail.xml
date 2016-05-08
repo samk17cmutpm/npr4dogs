@@ -1,0 +1,260 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="novahub.vn.npr4dogs.main.PilesDetailFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="novahub.vn.npr4dogs.resident.ResidentActivity"
+        tools:showIn="@layout/activity_resident"
+        android:background="@color/background.blur">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/background"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.andexert.library.RippleView
+                    android:id="@+id/rpv_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    rv_centered="true"
+                    android:layout_weight="0.37"
+                    android:padding="10dp"
+                    android:background="@drawable/cancle_backgrounnd"
+                    android:layout_alignTop="@+id/rpv_done"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Cancel"
+                            android:id="@+id/dsdsdfdfdsd"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center_vertical|center|center_horizontal"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="20dp" />
+
+                    </RelativeLayout>
+
+
+                </com.andexert.library.RippleView>
+
+                <com.andexert.library.RippleView
+                    android:id="@+id/rpv_done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    rv_centered="true"
+                    android:layout_weight="0.37"
+                    android:padding="10dp"
+                    android:background="@drawable/cancle_backgrounnd"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Done"
+                        android:id="@+id/dsdsds"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_vertical|center|center_horizontal"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center_horizontal" />
+
+                </com.andexert.library.RippleView>
+
+
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:id="@+id/imageView37"
+                android:src="@drawable/poop_photo"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Match Found"
+                android:id="@+id/textView103"
+                android:layout_alignTop="@+id/imageView37"
+                android:layout_toRightOf="@+id/imageView37"
+                android:layout_toEndOf="@+id/imageView37"
+                android:layout_marginLeft="26dp"
+                android:layout_marginStart="26dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Pile ID #: 10104"
+                android:id="@+id/textView104"
+                android:layout_below="@+id/textView103"
+                android:layout_alignLeft="@+id/textView103"
+                android:layout_alignStart="@+id/textView103" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Date of Sample"
+                android:id="@+id/textView105"
+                android:layout_below="@+id/textView104"
+                android:layout_alignLeft="@+id/textView104"
+                android:layout_alignStart="@+id/textView104"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="02/01/16 3:34pm"
+                android:id="@+id/textView106"
+                android:layout_below="@+id/textView105"
+                android:layout_alignLeft="@+id/textView105"
+                android:layout_alignStart="@+id/textView105" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Location"
+                android:id="@+id/textView107"
+                android:layout_below="@+id/textView106"
+                android:layout_alignLeft="@+id/textView106"
+                android:layout_alignStart="@+id/textView106"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="10, 10"
+                android:id="@+id/textView108"
+                android:layout_below="@+id/textView107"
+                android:layout_alignLeft="@+id/textView107"
+                android:layout_alignStart="@+id/textView107" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/imageView37"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp"
+                android:background="@color/background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Culprit"
+                    android:id="@+id/textView109"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="10dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/textView110"
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/imageView37"
+                android:layout_alignStart="@+id/imageView37" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/textView111"
+                android:layout_below="@+id/textView110"
+                android:layout_alignLeft="@+id/textView110"
+                android:layout_alignStart="@+id/textView110" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/textView112"
+                android:layout_below="@+id/textView111"
+                android:layout_alignLeft="@+id/textView111"
+                android:layout_alignStart="@+id/textView111" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/textView113"
+                android:layout_below="@+id/textView111"
+                android:layout_toRightOf="@+id/textView111"
+                android:layout_toEndOf="@+id/textView111" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/textView114"
+                android:layout_below="@+id/textView112"
+                android:layout_toLeftOf="@+id/textView113"
+                android:layout_toStartOf="@+id/textView113" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Small Text"
+                android:id="@+id/textView115"
+                android:layout_below="@+id/textView112"
+                android:layout_toRightOf="@+id/textView114"
+                android:layout_toEndOf="@+id/textView114" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</FrameLayout>
