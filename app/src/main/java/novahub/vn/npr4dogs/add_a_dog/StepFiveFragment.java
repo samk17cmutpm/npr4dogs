@@ -13,7 +13,6 @@ import com.andexert.library.RippleView;
 import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
-import novahub.vn.npr4dogs.card_io.ScanCardIOActivity;
 import novahub.vn.npr4dogs.take_photo.TakeAPhotoActivity;
 
 /**
@@ -38,7 +37,7 @@ public class StepFiveFragment extends BaseFragment implements AddADogContract.Vi
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_step_five, container, false);
-        rippleView = (RippleView) root.findViewById(R.id.rpv_take_photo_owner);
+        rippleView = (RippleView) root.findViewById(R.id.rpv_take_new_pile);
         rippleView.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
 
             @Override

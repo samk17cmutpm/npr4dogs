@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.andexert.library.RippleView;
+
 import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
@@ -25,6 +27,7 @@ public class SignInFragment extends BaseFragment implements SignInContract.View,
     private TextView tvForgotPassword;
     private TextView tvSignUp;
     private Button btSignIn;
+    private RippleView rippleView;
 
     public SignInFragment() {
         // Required empty public constructor
@@ -45,6 +48,13 @@ public class SignInFragment extends BaseFragment implements SignInContract.View,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_sign_in, container, false);
+        rippleView = (RippleView) root.findViewById(R.id.go_to_piles);
+        rippleView.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+            @Override
+            public void onComplete(RippleView rippleView) {
+                signInSuccessfully(true);
+            }
+        });
         presenter.loadForm();
         return root;
     }
@@ -89,6 +99,7 @@ public class SignInFragment extends BaseFragment implements SignInContract.View,
             Log.d(TAG, "Sign in success");
             Intent intent = new Intent(getContext(), MainActivity.class);
             getContext().startActivity(intent);
+            getActivity().finish();
         } else {
             Log.d(TAG, "Sign in unsuccess");
         }
@@ -111,9 +122,6 @@ public class SignInFragment extends BaseFragment implements SignInContract.View,
         switch (v.getId()) {
             case R.id.tv_forgot_password:
                 presenter.forgotPassword();
-                break;
-            case R.id.bt_sign_in:
-                presenter.signIn();
                 break;
             case R.id.tv_sign_up:
                 presenter.signUpNewAccount();

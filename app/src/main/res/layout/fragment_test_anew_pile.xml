@@ -36,7 +36,7 @@
         </android.support.v7.widget.Toolbar>
 
         <com.andexert.library.RippleView
-            android:id="@+id/rpv_take_photo_owner"
+            android:id="@+id/rpv_take_new_pile"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             rv_centered="true"
@@ -82,7 +82,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/rpv_take_photo_owner"
+            android:layout_below="@+id/rpv_take_new_pile"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp">
             <android.support.v7.widget.RecyclerView
