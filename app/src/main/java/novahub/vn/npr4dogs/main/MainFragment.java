@@ -28,18 +28,21 @@ public class MainFragment extends BaseFragment implements MainContract.View, Bas
     private NonSwipeableViewPager viewPager;
     private boolean from;
     private int page;
+    private int tab;
     private AHBottomNavigation bottomNavigation;
+
 
     public MainFragment() {
         // Required empty public constructor
     }
 
-    public static MainFragment newInstance(boolean from, int page) {
+    public static MainFragment newInstance(boolean from, int page, int tab) {
 
         MainFragment mainFragment = new MainFragment();
         Bundle args = new Bundle();
         args.putInt(PAGE, page);
         args.putBoolean(FROM, from);
+        args.putInt(CURRENT_TAB, tab);
         mainFragment.setArguments(args);
         return mainFragment;
     }
@@ -51,12 +54,15 @@ public class MainFragment extends BaseFragment implements MainContract.View, Bas
         root = inflater.inflate(R.layout.fragment_main, container, false);
         page = getArguments().getInt(PAGE, 0);
         from = getArguments().getBoolean(FROM, false);
+        tab = getArguments().getInt(CURRENT_TAB, 0);
         presenter.loadBottomNavigation();
         presenter.loadViewPagers();
         if (from) {
             presenter.loadTabDetails(page);
+            bottomNavigation.setCurrentItem(tab);
+            from = false;
         } else {
-            bottomNavigation.setCurrentItem(0);
+            bottomNavigation.setCurrentItem(TAB_ADD_A_DOG);
         }
         return root;
     }
@@ -114,7 +120,10 @@ public class MainFragment extends BaseFragment implements MainContract.View, Bas
         bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position, boolean wasSelected) {
-                presenter.loadTabDetails(position);
+                if (!from) {
+                    presenter.loadTabDetails(position);
+                }
+
             }
         });
     }
@@ -128,6 +137,11 @@ public class MainFragment extends BaseFragment implements MainContract.View, Bas
     @Override
     public void showTabDetails(int position) {
         viewPager.setCurrentItem(position, false);
+    }
+
+    @Override
+    public void showTabBottomWithoutAction() {
+
     }
 
     @Override

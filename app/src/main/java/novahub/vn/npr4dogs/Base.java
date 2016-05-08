@@ -12,6 +12,7 @@ public interface Base {
     public static final String PAGE = "PAGE";
     public static final String FROM = "FROM";
     public static final String IS_FROM_ACTION = "IS_FROM_ACTION";
+    public static final String CURRENT_TAB = "CURRENT_TAB";
 
     public static final int FROM_ADD_A_DOG = 1;
     public static final int FROM_PILES = 2;
@@ -29,5 +30,11 @@ public interface Base {
     public static final int GO_TO_PILES_STEP_FOUR = 3;
     public static final int GO_TO_PILES_STEP_FIVE = 4;
 
-
+    public static final int TAB_ADD_A_DOG = 0;
+    public static final int TAB_PILES = 1;
+    public static final int TAB_RESIDENTS = 2;
+    public static final int TAB_SETTINGS = 3;
+    public static final int TAB_ADD_A_DOG_PAST = 4;
+    public static final int TAB_TEST_A_NEW_PILE = 5;
+    public static final int TAB_RESIDENTS_DETAIL = 6;
 }

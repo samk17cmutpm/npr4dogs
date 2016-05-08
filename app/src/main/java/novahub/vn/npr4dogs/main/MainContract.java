@@ -16,12 +16,14 @@ public interface MainContract {
         void showBottomNavigation();
         void showViewPagers();
         void showTabDetails(int position);
+        void showTabBottomWithoutAction();
     }
 
     interface Presenter extends BasePresenter {
         void loadBottomNavigation();
         void loadViewPagers();
         void loadTabDetails(int position);
+        void loadTabBottomWithoutAction();
 
     }
 

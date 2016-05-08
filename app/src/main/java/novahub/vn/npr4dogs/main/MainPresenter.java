@@ -28,6 +28,11 @@ public class MainPresenter implements MainContract.Presenter{
     }
 
     @Override
+    public void loadTabBottomWithoutAction() {
+
+    }
+
+    @Override
     public void start() {
 
     }

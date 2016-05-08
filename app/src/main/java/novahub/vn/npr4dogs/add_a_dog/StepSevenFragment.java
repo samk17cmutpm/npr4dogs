@@ -13,6 +13,7 @@ import com.andexert.library.RippleView;
 import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.R;
 import novahub.vn.npr4dogs.main.MainActivity;
+import novahub.vn.npr4dogs.utils.Cookie;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,6 +43,7 @@ public class StepSevenFragment extends Fragment implements AddADogContract.View,
 
             @Override
             public void onComplete(RippleView rippleView) {
+                Cookie.isDoneAddADog = true;
                 presenter.finish();
             }
 
@@ -57,7 +59,10 @@ public class StepSevenFragment extends Fragment implements AddADogContract.View,
     @Override
     public void comeBack() {
         Intent intent = new Intent(getContext(), MainActivity.class);
-        intent.putExtra(PAGE, 1);
+        intent.putExtra(IS_FROM_ACTION, true);
+        intent.putExtra(FROM, FROM_ADD_A_DOG);
+        intent.putExtra(PAGE, TAB_ADD_A_DOG_PAST);
+        intent.putExtra(CURRENT_TAB, TAB_RESIDENTS);
         getContext().startActivity(intent);
         getActivity().finish();
     }
