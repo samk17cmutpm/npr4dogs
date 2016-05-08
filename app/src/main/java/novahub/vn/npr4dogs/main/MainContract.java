@@ -96,7 +96,7 @@ public interface MainContract {
         void loadView();
     }
 
-    interface BasePilesDetailView extends BaseView<BasePilesDetailView> {
+    interface BasePilesDetailView extends BaseView<BasePilesDetailPresenter> {
         void showView();
     }
 

@@ -267,7 +267,7 @@ android:fillViewport="true">
         android:layout_marginTop="10dp" />
 
     <com.andexert.library.RippleView
-        android:id="@+id/rpv_residents"
+        android:id="@+id/rpv_piles"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         rv_centered="true"
@@ -302,7 +302,7 @@ android:fillViewport="true">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:layout_below="@+id/rpv_residents"
+        android:layout_below="@+id/rpv_piles"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@color/background"

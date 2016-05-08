@@ -18,6 +18,7 @@ public class MainTabsPagerAdapter extends SmartFragmentStatePagerAdapter impleme
     private AddADogPastPresenter addADogPastPresenter;
     private TestANewPilePresenter testANewPilePresenter;
     private ResidentsDetailPresenter residentsDetailPresenter;
+    private PilesDetailPresenter pilesDetailPresenter;
 
     public MainTabsPagerAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);
@@ -61,6 +62,11 @@ public class MainTabsPagerAdapter extends SmartFragmentStatePagerAdapter impleme
                 fragment = new ResidentsDetailFragment().newInstance();
                 residentsDetailPresenter = new
                         ResidentsDetailPresenter((MainContract.BaseResidentsDetailView) fragment);
+                return fragment;
+            case 7:
+                fragment = new PilesDetailFragment().newInstance();
+                pilesDetailPresenter = new
+                        PilesDetailPresenter((MainContract.BasePilesDetailView) fragment);
                 return fragment;
 
         }

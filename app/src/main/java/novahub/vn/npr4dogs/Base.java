@@ -5,7 +5,7 @@ package novahub.vn.npr4dogs;
  */
 public interface Base {
     public static final String FONT = "fonts/avenir_next.ttc";
-    public static final int TABS = 7;
+    public static final int TABS = 8;
     public static final int RESIDENTS = 2;
     public static final int ADD_A_DOG = 7;
     public static final int PILES = 5;
@@ -37,4 +37,5 @@ public interface Base {
     public static final int TAB_ADD_A_DOG_PAST = 4;
     public static final int TAB_TEST_A_NEW_PILE = 5;
     public static final int TAB_RESIDENTS_DETAIL = 6;
+    public static final int TAB_PILES_DETAIL = 7;
 }

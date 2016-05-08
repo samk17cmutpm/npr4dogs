@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import com.andexert.library.RippleView;
 
@@ -68,7 +69,23 @@ public class AddADogPastFragment extends BaseFragment implements MainContract.Ba
             }
         });
 
-        rippleViewResidents = (RippleView) root.findViewById(R.id.rpv_residents);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position > 2) {
+                    Intent intent = new Intent(getContext(), MainActivity.class);
+                    intent.putExtra(IS_FROM_ACTION, true);
+                    intent.putExtra(FROM, FROM_ADD_A_DOG);
+                    intent.putExtra(PAGE, TAB_PILES_DETAIL);
+                    intent.putExtra(CURRENT_TAB, TAB_PILES);
+                    getContext().startActivity(intent);
+                    getActivity().finish();
+
+                }
+            }
+        });
+
+        rippleViewResidents = (RippleView) root.findViewById(R.id.rpv_piles);
         rippleViewResidents.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
 
             @Override
