@@ -3,16 +3,19 @@ package novahub.vn.npr4dogs.main;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.andexert.library.RippleView;
+
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 
+import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
 import novahub.vn.npr4dogs.data.Pile;
@@ -22,12 +25,14 @@ import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AddADogPastFragment extends BaseFragment implements MainContract.BaseAddADogPastView {
+public class AddADogPastFragment extends BaseFragment implements MainContract.BaseAddADogPastView, Base {
     private MainContract.BaseAddADogPastPresenter presenter;
     private View root;
     private ExpandableStickyListHeadersListView mListView;
     TestBaseAdapter mTestBaseAdapter;
     WeakHashMap<View,Integer> mOriginalViewHeightPool = new WeakHashMap<View, Integer>();
+    private RippleView rippleViewResidents;
+    private RippleView rippleViewEdit;
     public AddADogPastFragment() {
         // Required empty public constructor
     }
@@ -61,6 +66,38 @@ public class AddADogPastFragment extends BaseFragment implements MainContract.Ba
                     mListView.collapse(headerId);
                 }
             }
+        });
+
+        rippleViewResidents = (RippleView) root.findViewById(R.id.rpv_residents);
+        rippleViewResidents.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+
+            @Override
+            public void onComplete(RippleView rippleView) {
+                Intent intent = new Intent(getContext(), MainActivity.class);
+                intent.putExtra(IS_FROM_ACTION, true);
+                intent.putExtra(FROM, FROM_ADD_A_DOG);
+                intent.putExtra(PAGE, TAB_RESIDENTS);
+                intent.putExtra(CURRENT_TAB, TAB_RESIDENTS);
+                getContext().startActivity(intent);
+                getActivity().finish();
+            }
+
+        });
+
+        rippleViewEdit = (RippleView) root.findViewById(R.id.rpv_done);
+        rippleViewEdit.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+
+            @Override
+            public void onComplete(RippleView rippleView) {
+                Intent intent = new Intent(getContext(), MainActivity.class);
+                intent.putExtra(IS_FROM_ACTION, true);
+                intent.putExtra(FROM, FROM_ADD_A_DOG);
+                intent.putExtra(PAGE, TAB_RESIDENTS_DETAIL);
+                intent.putExtra(CURRENT_TAB, TAB_RESIDENTS);
+                getContext().startActivity(intent);
+                getActivity().finish();
+            }
+
         });
         return root;
     }

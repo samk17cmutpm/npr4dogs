@@ -1,6 +1,7 @@
 package novahub.vn.npr4dogs.main;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -87,6 +88,19 @@ public class ResidentsFragment extends BaseFragment implements MainContract.Base
         recyclerView.setLayoutManager(layoutManager);
         residentsRecyclerViewAdapter = new ResidentsRecyclerViewAdapter(residents);
         recyclerView.setAdapter(residentsRecyclerViewAdapter);
+
+        residentsRecyclerViewAdapter.setOnItemClickListener(new ResidentsRecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemVIew, int position) {
+                Intent intent = new Intent(getContext(), MainActivity.class);
+                intent.putExtra(IS_FROM_ACTION, true);
+                intent.putExtra(FROM, FROM_ADD_A_DOG);
+                intent.putExtra(PAGE, TAB_ADD_A_DOG_PAST);
+                intent.putExtra(CURRENT_TAB, TAB_RESIDENTS);
+                getContext().startActivity(intent);
+                getActivity().finish();
+            }
+        });
     }
 
     @Override

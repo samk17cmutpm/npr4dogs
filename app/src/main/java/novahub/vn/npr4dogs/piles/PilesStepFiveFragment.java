@@ -75,7 +75,10 @@ public class PilesStepFiveFragment extends BaseFragment implements PilesContract
     @Override
     public void comeBack() {
         Intent intent = new Intent(getContext(), MainActivity.class);
-        intent.putExtra(PAGE, 2);
+        intent.putExtra(IS_FROM_ACTION, true);
+        intent.putExtra(FROM, FROM_ADD_A_DOG);
+        intent.putExtra(PAGE, TAB_TEST_A_NEW_PILE);
+        intent.putExtra(CURRENT_TAB, TAB_PILES);
         getContext().startActivity(intent);
         getActivity().finish();
     }
