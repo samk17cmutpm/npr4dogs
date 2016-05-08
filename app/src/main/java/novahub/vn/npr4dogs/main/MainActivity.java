@@ -47,12 +47,6 @@ public class MainActivity extends AppCompatActivity implements Base{
         }
         presenter = new MainPresenter(mainFragment);
 
-
-
-
-
-
-
     }
 
 

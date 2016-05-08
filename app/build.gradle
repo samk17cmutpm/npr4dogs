@@ -32,4 +32,6 @@ dependencies {
     compile 'info.hoang8f:android-segmented:1.0.6'
     compile 'me.relex:circleindicator:1.2.1@aar'
     compile 'se.emilsjolander:stickylistheaders:2.7.0'
+    compile 'io.card:android-sdk:5.3.4'
+    compile 'me.dm7.barcodescanner:zxing:1.8.4'
 }

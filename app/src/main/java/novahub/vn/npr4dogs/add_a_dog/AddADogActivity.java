@@ -8,11 +8,12 @@ import android.support.v7.widget.Toolbar;
 import com.andexert.library.RippleView;
 
 import me.relex.circleindicator.CircleIndicator;
+import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.R;
 import novahub.vn.npr4dogs.lib.NonSwipeableViewPager;
 import novahub.vn.npr4dogs.main.MainActivity;
 
-public class AddADogActivity extends AppCompatActivity {
+public class AddADogActivity extends AppCompatActivity implements Base {
 
     public static NonSwipeableViewPager viewPager;
     public static CircleIndicator indicator;
@@ -46,6 +47,15 @@ public class AddADogActivity extends AppCompatActivity {
 
         });
 
+        int page = getIntent().getIntExtra(PAGE, 0);
+        switch (page) {
+            case 1:
+                viewPager.setCurrentItem(2, false);
+                break;
+            case 2:
+                viewPager.setCurrentItem(1,false);
+                break;
+        }
 
     }
 

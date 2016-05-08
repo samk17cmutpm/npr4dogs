@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="novahub.vn.npr4dogs.take_photo.TakeAPhotoActivity"
+    tools:showIn="@layout/activity_take_aphoto">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:id="@+id/ivPreview"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY" />
+
+    <com.andexert.library.RippleView
+        android:id="@+id/rpv_pay_pefdfee"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        rv_centered="true"
+        android:layout_alignBottom="@+id/rpv_pay_pee"
+        android:layout_alignRight="@+id/rpv_pay_pee"
+        android:layout_alignEnd="@+id/rpv_pay_pee"
+        android:layout_marginBottom="65dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView37"
+            android:src="@drawable/dog" />
+
+    </com.andexert.library.RippleView>
+
+
+
+    <com.andexert.library.RippleView
+        android:id="@+id/rpv_pay_pee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        rv_centered="true"
+        android:layout_below="@+id/ivPreview"
+        android:layout_alignLeft="@+id/ivPreview"
+        android:layout_alignStart="@+id/ivPreview"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
+
+        <Button
+            android:id="@+id/bt_sign_in"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Finish"
+            android:textStyle="bold"
+            android:layout_below="@+id/view"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/sign_in_radius_button" />
+
+    </com.andexert.library.RippleView>
+</RelativeLayout>

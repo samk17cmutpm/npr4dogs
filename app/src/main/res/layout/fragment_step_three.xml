@@ -198,7 +198,7 @@
                 </RelativeLayout>
 
                 <com.andexert.library.RippleView
-                    android:id="@+id/rpv_scan_barcode"
+                    android:id="@+id/rpv_scan_card_io"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     rv_centered="true"

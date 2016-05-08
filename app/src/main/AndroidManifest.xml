@@ -6,6 +6,22 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- Permission to vibrate - recommended, allows vibration feedback on scan -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Permission to use camera - required -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Camera features - recommended -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -23,7 +39,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".sign_in.SignInActivity"
@@ -47,9 +62,23 @@
         <activity
             android:name=".resident.ResidentActivity"
             android:label="@string/title_activity_resident"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="io.card.payment.CardIOActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="io.card.payment.DataEntryActivity" />
+        <activity
+            android:name=".card_io.ScanCardIOActivity"
+            android:label="@string/title_activity_scan_card_io"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".scan_barcode.ScanBarcodeActivity"
+            android:label="@string/title_activity_scan_barcode"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".take_photo.TakeAPhotoActivity"
+            android:label="@string/title_activity_take_aphoto"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

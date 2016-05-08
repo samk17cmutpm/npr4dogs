@@ -28,4 +28,7 @@
     <string name="title_activity_add_adog">AddADogActivity</string>
     <string name="title_activity_piles">PilesActivity</string>
     <string name="title_activity_resident">ResidentActivity</string>
+    <string name="title_activity_scan_card_io">ScanCardIOActivity</string>
+    <string name="title_activity_scan_barcode">ScanBarcodeActivity</string>
+    <string name="title_activity_take_aphoto">TakeAPhotoActivity</string>
 </resources>

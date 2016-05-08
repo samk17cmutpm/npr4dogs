@@ -1,6 +1,7 @@
 package novahub.vn.npr4dogs.add_a_dog;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -12,6 +13,7 @@ import com.andexert.library.RippleView;
 
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
+import novahub.vn.npr4dogs.scan_barcode.ScanBarcodeActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,8 +42,10 @@ public class StepOneFragment extends BaseFragment implements AddADogContract.Vie
 
             @Override
             public void onComplete(RippleView rippleView) {
-                Log.d("Sample", "Ripple completed");
-                presenter.goNext(1);
+                Intent intent = new Intent(getContext(), ScanBarcodeActivity.class);
+                getContext().startActivity(intent);
+                getActivity().finish();
+//                presenter.goNext(1);
             }
 
         });

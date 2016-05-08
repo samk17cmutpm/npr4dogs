@@ -1,6 +1,7 @@
 package novahub.vn.npr4dogs.add_a_dog;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -12,6 +13,7 @@ import com.andexert.library.RippleView;
 
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
+import novahub.vn.npr4dogs.card_io.ScanCardIOActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,6 +22,7 @@ public class StepThreeFragment extends BaseFragment implements AddADogContract.V
     private AddADogContract.Presenter presenter;
     private View root;
     private RippleView rippleView;
+    private RippleView rippleViewScanCardIO;
     public StepThreeFragment() {
         // Required empty public constructor
     }
@@ -45,6 +48,19 @@ public class StepThreeFragment extends BaseFragment implements AddADogContract.V
             }
 
         });
+
+        rippleViewScanCardIO = (RippleView) root.findViewById(R.id.rpv_scan_card_io);
+
+        rippleViewScanCardIO.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+
+            @Override
+            public void onComplete(RippleView rippleView) {
+                Intent intent = new Intent(getContext(), ScanCardIOActivity.class);
+                getContext().startActivity(intent);
+            }
+
+        });
+
         return root;
     }
 

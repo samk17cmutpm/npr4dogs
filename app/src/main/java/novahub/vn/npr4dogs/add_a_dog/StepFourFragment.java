@@ -1,6 +1,7 @@
 package novahub.vn.npr4dogs.add_a_dog;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import com.andexert.library.RippleView;
 
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
+import novahub.vn.npr4dogs.take_photo.TakeAPhotoActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,7 +42,10 @@ public class StepFourFragment extends BaseFragment implements AddADogContract.Vi
 
             @Override
             public void onComplete(RippleView rippleView) {
-                presenter.goNext(4);
+//                presenter.goNext(4);
+                Intent intent = new Intent(getContext(), TakeAPhotoActivity.class);
+                getActivity().startActivity(intent);
+                getActivity().finish();
             }
 
         });
