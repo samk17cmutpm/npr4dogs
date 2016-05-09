@@ -29,6 +29,7 @@ public class MainFragment extends BaseFragment implements MainContract.View, Bas
     private boolean from;
     private int page;
     private int tab;
+    private int position;
     private AHBottomNavigation bottomNavigation;
 
 
@@ -36,13 +37,14 @@ public class MainFragment extends BaseFragment implements MainContract.View, Bas
         // Required empty public constructor
     }
 
-    public static MainFragment newInstance(boolean from, int page, int tab) {
+    public static MainFragment newInstance(boolean from, int page, int tab, int position) {
 
         MainFragment mainFragment = new MainFragment();
         Bundle args = new Bundle();
         args.putInt(PAGE, page);
         args.putBoolean(FROM, from);
         args.putInt(CURRENT_TAB, tab);
+        args.putInt(POSITION, position);
         mainFragment.setArguments(args);
         return mainFragment;
     }
@@ -55,6 +57,7 @@ public class MainFragment extends BaseFragment implements MainContract.View, Bas
         page = getArguments().getInt(PAGE, 0);
         from = getArguments().getBoolean(FROM, false);
         tab = getArguments().getInt(CURRENT_TAB, 0);
+        position = getArguments().getInt(POSITION, 0);
         presenter.loadBottomNavigation();
         presenter.loadViewPagers();
         if (from) {
@@ -131,7 +134,7 @@ public class MainFragment extends BaseFragment implements MainContract.View, Bas
     @Override
     public void showViewPagers() {
         viewPager = (NonSwipeableViewPager) root.findViewById(R.id.viewpager);
-        viewPager.setAdapter(new MainTabsPagerAdapter(getFragmentManager()));
+        viewPager.setAdapter(new MainTabsPagerAdapter(getFragmentManager(), this.position));
     }
 
     @Override

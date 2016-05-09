@@ -34,13 +34,15 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText9"
+        android:id="@+id/editTextFirst"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:nextFocusDown="@+id/editTextSecond"
         android:layout_below="@+id/textView122"
         android:layout_alignLeft="@+id/textView122"
         android:layout_alignStart="@+id/textView122"
         android:layout_alignRight="@+id/textView123"
-        android:layout_alignEnd="@+id/textView123"
-        android:lines="1" />
+        android:layout_alignEnd="@+id/textView123" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,9 +51,9 @@
         android:text="2"
         android:id="@+id/textView124"
         android:layout_marginTop="34dp"
-        android:layout_below="@+id/editText9"
-        android:layout_alignLeft="@+id/editText9"
-        android:layout_alignStart="@+id/editText9" />
+        android:layout_below="@+id/editTextFirst"
+        android:layout_alignLeft="@+id/editTextFirst"
+        android:layout_alignStart="@+id/editTextFirst" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,14 +68,16 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText10"
+        android:id="@+id/editTextSecond"
+        android:nextFocusDown="@+id/editTextThird"
         android:layout_below="@+id/textView125"
         android:layout_alignLeft="@+id/textView124"
         android:layout_alignStart="@+id/textView124"
         android:layout_marginTop="30dp"
         android:layout_alignRight="@+id/textView125"
         android:layout_alignEnd="@+id/textView125"
-        android:lines="1" />
+        android:maxLines="1"
+        android:singleLine="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -82,9 +86,9 @@
         android:text="3"
         android:id="@+id/textView126"
         android:layout_marginTop="32dp"
-        android:layout_below="@+id/editText10"
-        android:layout_alignLeft="@+id/editText10"
-        android:layout_alignStart="@+id/editText10" />
+        android:layout_below="@+id/editTextSecond"
+        android:layout_alignLeft="@+id/editTextSecond"
+        android:layout_alignStart="@+id/editTextSecond" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -99,14 +103,17 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText11"
+        android:id="@+id/editTextThird"
         android:layout_below="@+id/textView126"
         android:layout_alignLeft="@+id/textView126"
         android:layout_alignStart="@+id/textView126"
         android:layout_marginTop="28dp"
         android:layout_alignRight="@+id/textView127"
         android:layout_alignEnd="@+id/textView127"
-        android:lines="1" />
+        android:imeActionLabel="Submit"
+        android:imeOptions="actionUnspecified"
+        android:maxLines="1"
+        android:singleLine="true" />
 
     <com.andexert.library.RippleView
         android:id="@+id/rpv_submit"

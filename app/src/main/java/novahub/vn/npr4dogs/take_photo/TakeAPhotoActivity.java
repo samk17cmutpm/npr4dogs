@@ -3,6 +3,8 @@ package novahub.vn.npr4dogs.take_photo;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -35,6 +37,7 @@ public class TakeAPhotoActivity extends AppCompatActivity implements Base{
     private RippleView rippleViewRetry;
     private RippleView rippleViewDone;
     private int from;
+    private ImageView ivPreview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,7 @@ public class TakeAPhotoActivity extends AppCompatActivity implements Base{
 
             @Override
             public void onComplete(RippleView rippleView) {
+                rippleViewTakeNewPhoto.setEnabled(false);
                 onLaunchCamera();
             }
 
@@ -60,6 +64,7 @@ public class TakeAPhotoActivity extends AppCompatActivity implements Base{
 
             @Override
             public void onComplete(RippleView rippleView) {
+                rippleViewTakeNewPhoto.setEnabled(false);
                 onPickPhoto();
             }
 
@@ -70,6 +75,7 @@ public class TakeAPhotoActivity extends AppCompatActivity implements Base{
 
             @Override
             public void onComplete(RippleView rippleView) {
+                rippleViewTakeNewPhoto.setEnabled(false);
                 onLaunchCamera();
             }
 
@@ -104,8 +110,18 @@ public class TakeAPhotoActivity extends AppCompatActivity implements Base{
             }
 
         });
-    }
 
+        ivPreview = (ImageView) findViewById(R.id.ivPreview);
+    }
+    public static Bitmap rotateImage(Bitmap source, float angle) {
+        Bitmap retVal;
+
+        Matrix matrix = new Matrix();
+        matrix.postRotate(angle);
+        retVal = Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(), matrix, true);
+
+        return retVal;
+    }
     public void onLaunchCamera() {
         // create Intent to take a picture and return control to the calling application
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -139,9 +155,26 @@ public class TakeAPhotoActivity extends AppCompatActivity implements Base{
                 Uri takenPhotoUri = getPhotoFileUri(photoFileName);
                 // by this point we have the camera photo on disk
                 Bitmap takenImage = BitmapFactory.decodeFile(takenPhotoUri.getPath());
-                // Load the taken image into a preview
-                ImageView ivPreview = (ImageView) findViewById(R.id.ivPreview);
-                ivPreview.setImageBitmap(takenImage);
+
+                ExifInterface ei = null;
+                try {
+                    ei = new ExifInterface(takenPhotoUri.getPath());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                int orientation = ei.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED);
+
+                switch(orientation) {
+                    case ExifInterface.ORIENTATION_ROTATE_90:
+                        ivPreview.setImageBitmap(rotateImage(takenImage, 90));
+                        break;
+                    case ExifInterface.ORIENTATION_ROTATE_180:
+                        ivPreview.setImageBitmap(rotateImage(takenImage, 180));
+                        break;
+                    // etc.
+                }
+
+
             } else { // Result was a failure
                 Toast.makeText(this, "Picture wasn't taken!", Toast.LENGTH_SHORT).show();
             }
@@ -156,8 +189,8 @@ public class TakeAPhotoActivity extends AppCompatActivity implements Base{
                     e.printStackTrace();
                 }
                 // Load the selected image into a preview
-                ImageView ivPreview = (ImageView) findViewById(R.id.ivPreview);
                 ivPreview.setImageBitmap(selectedImage);
+                ivPreview.setEnabled(false);
             }
         }
     }

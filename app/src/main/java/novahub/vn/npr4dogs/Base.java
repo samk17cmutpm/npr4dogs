@@ -13,6 +13,7 @@ public interface Base {
     public static final String FROM = "FROM";
     public static final String IS_FROM_ACTION = "IS_FROM_ACTION";
     public static final String CURRENT_TAB = "CURRENT_TAB";
+    public static final String POSITION = "POSITION";
 
     public static final int FROM_ADD_A_DOG = 1;
     public static final int FROM_PILES = 2;
@@ -38,4 +39,9 @@ public interface Base {
     public static final int TAB_TEST_A_NEW_PILE = 5;
     public static final int TAB_RESIDENTS_DETAIL = 6;
     public static final int TAB_PILES_DETAIL = 7;
+
+
+    public static final int MATCH_FOUND = 0;
+    public static final int PENDING_TO_TEST = 1;
+    public static final int UNABLE_TO_MATCH = 2;
 }

@@ -8,20 +8,17 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.R;
 import novahub.vn.npr4dogs.data.Pile;
 
 /**
  * Created by samnguyen on 5/7/16.
  */
-public class PilesRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class PilesRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements Base {
 
     private List<Pile> piles;
     private static OnItemClickListener listener;
-
-    private final int MATCH_FOUND = 1;
-    private final int PENDING_TO_TEST = 2;
-    private final int UNABLE_TO_MATCH = 3;
 
     public PilesRecyclerViewAdapter(List<Pile> piles) {
         this.piles = piles;
@@ -98,5 +95,52 @@ public class PilesRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
 //            });
 //        }
 //    }
+
+    public class PilesViewHolderMatchFound extends RecyclerView.ViewHolder {
+        public PilesViewHolderMatchFound(final View itemView) {
+            super(itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null) {
+                        listener.onItemClick(itemView, getLayoutPosition());
+                    }
+                }
+            });
+        }
+    }
+
+    public class PilesViewHolderPendingToTest extends RecyclerView.ViewHolder {
+        public PilesViewHolderPendingToTest(final View itemView) {
+            super(itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null) {
+                        listener.onItemClick(itemView, getLayoutPosition());
+                    }
+
+                }
+            });
+        }
+    }
+
+    public class PilesViewHolderUnableToMatch extends RecyclerView.ViewHolder {
+        public PilesViewHolderUnableToMatch(final View itemView) {
+            super(itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null) {
+                        listener.onItemClick(itemView, getLayoutPosition());
+                    }
+                }
+            });
+        }
+    }
+
+
+
+
 }
 

@@ -37,6 +37,7 @@ public class TestANewPileFragment extends BaseFragment implements MainContract.B
 
     public static TestANewPileFragment newInstance() {
         TestANewPileFragment testANewPileFragment = new TestANewPileFragment();
+
         return testANewPileFragment;
     }
 
@@ -80,6 +81,7 @@ public class TestANewPileFragment extends BaseFragment implements MainContract.B
                 intent.putExtra(FROM, FROM_ADD_A_DOG);
                 intent.putExtra(PAGE, TAB_PILES_DETAIL);
                 intent.putExtra(CURRENT_TAB, TAB_PILES);
+                intent.putExtra(POSITION, position);
                 getContext().startActivity(intent);
                 getActivity().finish();
             }

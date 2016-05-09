@@ -6,7 +6,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.andexert.library.RippleView;
 
@@ -21,6 +25,7 @@ public class SurveyActivity extends AppCompatActivity implements Base{
 
     private RippleView rippleView;
     private RippleView rippleViewCancel;
+    private EditText editTextThird;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +88,38 @@ public class SurveyActivity extends AppCompatActivity implements Base{
                 startActivity(intent);
                 finish();
 
+            }
+        });
+
+        editTextThird = (EditText) findViewById(R.id.editTextThird);
+        editTextThird.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_UNSPECIFIED) {
+                    int from = getIntent().getIntExtra(FROM, 0);
+                    int page = getIntent().getIntExtra(PAGE, 0);
+                    Intent intent = null;
+                    switch (from) {
+                        case FROM_ADD_A_DOG:
+                            intent = new Intent(SurveyActivity.this, AddADogActivity.class);
+                            break;
+
+                        case FROM_PILES:
+                            intent = new Intent(SurveyActivity.this, PilesActivity.class);
+                            break;
+
+                        default:
+                            intent = new Intent(SurveyActivity.this, MainActivity.class);
+                            break;
+
+                    }
+                    intent.putExtra(IS_FROM_ACTION, true);
+                    intent.putExtra(PAGE, page);
+                    startActivity(intent);
+                    finish();
+                    return true;
+                }
+                return false;
             }
         });
     }

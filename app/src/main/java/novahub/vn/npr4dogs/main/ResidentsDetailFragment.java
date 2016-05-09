@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.andexert.library.RippleView;
 
@@ -22,6 +24,8 @@ public class ResidentsDetailFragment extends Fragment implements MainContract.Ba
     private RippleView rippleViewCancel;
     private RippleView rippleViewDone;
     private View root;
+    private RelativeLayout relativeLayoutResidentMoveOut;
+    private RelativeLayout relativeLayoutDogMoveOut;
 
     public ResidentsDetailFragment() {
         // Required empty public constructor
@@ -67,6 +71,23 @@ public class ResidentsDetailFragment extends Fragment implements MainContract.Ba
                 getActivity().finish();
             }
 
+        });
+
+        relativeLayoutResidentMoveOut = (RelativeLayout) root.findViewById(R.id.resident_move_out);
+        relativeLayoutDogMoveOut = (RelativeLayout) root.findViewById(R.id.dog_move_out);
+
+        relativeLayoutResidentMoveOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Residents move out", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        relativeLayoutDogMoveOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Dogs move out", Toast.LENGTH_SHORT).show();
+            }
         });
         return root;
     }

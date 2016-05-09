@@ -4,10 +4,12 @@ package novahub.vn.npr4dogs.main;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.andexert.library.RippleView;
 
@@ -24,12 +26,18 @@ public class PilesDetailFragment extends BaseFragment implements MainContract.Ba
     private RippleView rippleViewPiles;
     private RippleView rippleViewResidents;
     private View root;
+    private int position;
+    private RelativeLayout relativeLayout;
+    private TextView textViewIndetify;
     public PilesDetailFragment() {
         // Required empty public constructor
     }
 
-    public static PilesDetailFragment newInstance() {
+    public static PilesDetailFragment newInstance(int position) {
         PilesDetailFragment pilesDetailFragment = new PilesDetailFragment();
+        Bundle args = new Bundle();
+        args.putInt(POSITION, position);
+        pilesDetailFragment.setArguments(args);
         return pilesDetailFragment;
     }
 
@@ -39,7 +47,8 @@ public class PilesDetailFragment extends BaseFragment implements MainContract.Ba
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_piles_detail, container, false);
-        rippleViewPiles = (RippleView) root.findViewById(R.id.rpv_piles);
+        position = getArguments().getInt(POSITION, MATCH_FOUND);
+        rippleViewPiles = (RippleView) root.findViewById(R.id.resident_move_out);
         rippleViewPiles.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
 
             @Override
@@ -72,6 +81,23 @@ public class PilesDetailFragment extends BaseFragment implements MainContract.Ba
             }
 
         });
+
+        relativeLayout = (RelativeLayout) root.findViewById(R.id.detail_match_found);
+        textViewIndetify = (TextView) root.findViewById(R.id.tv_indentify);
+        switch (position % 3) {
+            case PENDING_TO_TEST:
+                relativeLayout.setVisibility(View.GONE);
+                textViewIndetify.setText("Pending To Test");
+                textViewIndetify.setTextColor(ContextCompat.getColor(getContext(), R.color.orange));
+                break;
+            case UNABLE_TO_MATCH:
+                relativeLayout.setVisibility(View.GONE);
+                textViewIndetify.setText("Unable To Match");
+                textViewIndetify.setTextColor(ContextCompat.getColor(getContext(), R.color.red));
+                break;
+
+
+        }
         return root;
     }
 

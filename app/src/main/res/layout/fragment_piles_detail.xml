@@ -28,7 +28,7 @@
                 android:layout_height="match_parent">
 
                 <com.andexert.library.RippleView
-                    android:id="@+id/rpv_piles"
+                    android:id="@+id/resident_move_out"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     rv_centered="true"
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Match Found"
-                android:id="@+id/textView103"
+                android:id="@+id/tv_indentify"
                 android:layout_alignTop="@+id/imageView37"
                 android:layout_toRightOf="@+id/imageView37"
                 android:layout_toEndOf="@+id/imageView37"
@@ -141,9 +141,9 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Pile ID #: 10104"
                 android:id="@+id/textView104"
-                android:layout_below="@+id/textView103"
-                android:layout_alignLeft="@+id/textView103"
-                android:layout_alignStart="@+id/textView103" />
+                android:layout_below="@+id/tv_indentify"
+                android:layout_alignLeft="@+id/tv_indentify"
+                android:layout_alignStart="@+id/tv_indentify" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -190,220 +190,231 @@
                 android:layout_alignStart="@+id/textView107"
                 android:textColor="@color/colorPrimary" />
 
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="match_parent"
                 android:layout_below="@+id/imageView37"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="20dp"
-                android:background="@color/background"
-                android:id="@+id/relativeLayout7">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Culprit"
-                    android:id="@+id/textView109"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginLeft="10dp" />
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Sparky"
-                android:id="@+id/textView110"
-                android:layout_below="@+id/relativeLayout7"
-                android:layout_alignLeft="@+id/imageView37"
-                android:layout_alignStart="@+id/imageView37"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Male - Neutered--60lbs"
-                android:id="@+id/textView111"
-                android:layout_below="@+id/textView110"
-                android:layout_alignLeft="@+id/textView110"
-                android:layout_alignStart="@+id/textView110"
-                android:layout_marginTop="5dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Breed: "
-                android:id="@+id/textView112"
-                android:layout_below="@+id/textView111"
-                android:layout_alignLeft="@+id/textView111"
-                android:layout_alignStart="@+id/textView111"
-                android:textStyle="bold"
-                android:layout_marginTop="5dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Australian Shepherd"
-                android:id="@+id/textView113"
-                android:layout_below="@+id/textView111"
-                android:layout_toRightOf="@+id/textView112"
-                android:layout_toEndOf="@+id/textView112"
-                android:layout_marginTop="5dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Coloring: "
-                android:id="@+id/textView114"
-                android:layout_alignLeft="@+id/textView112"
-                android:layout_alignStart="@+id/textView112"
-                android:textStyle="bold"
-                android:layout_marginTop="5dp"
-                android:layout_below="@+id/textView113" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Shots: "
-                android:id="@+id/textView116"
-                android:layout_below="@+id/textView114"
-                android:layout_alignLeft="@+id/textView114"
-                android:layout_alignStart="@+id/textView114"
-                android:textStyle="bold"
-                android:layout_marginTop="5dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Up to date"
-                android:id="@+id/textView117"
-                android:layout_below="@+id/textView114"
-                android:layout_toRightOf="@+id/textView116"
-                android:layout_toEndOf="@+id/textView116"
-                android:layout_marginTop="5dp" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:id="@+id/imageView38"
-                android:src="@drawable/splash_screen_dog"
-                android:layout_alignBottom="@+id/textView117"
-                android:layout_alignRight="@+id/textView104"
-                android:layout_alignEnd="@+id/textView104" />
-
-            <ImageView
-                android:layout_width="130dp"
-                android:layout_height="100dp"
-                android:id="@+id/imageView39"
-                android:src="@drawable/splash_screen_busted"
-                android:layout_alignTop="@+id/imageView38"
-                android:layout_toRightOf="@+id/textView108"
-                android:layout_toEndOf="@+id/textView108" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/background"
-                android:id="@+id/relativeLayout8"
-                android:layout_below="@+id/textView116"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Owner"
-                    android:id="@+id/textView118"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginLeft="10dp" />
-            </RelativeLayout>
-
-            <com.andexert.library.RippleView
-                android:id="@+id/rvp_residents"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                rv_centered="true"
-                android:layout_weight="0.37"
-                android:padding="10dp"
-                android:background="@drawable/cancle_backgrounnd"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/relativeLayout8">
-
+                android:id="@+id/detail_match_found">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="80dp"
-                        android:id="@+id/imageView40"
-                        android:src="@drawable/avatar"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true" />
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/imageView37"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/background"
+                    android:id="@+id/relativeLayout7">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Jimmy Bates"
-                        android:id="@+id/textView119"
-                        android:textStyle="bold"
-                        android:layout_alignParentTop="true"
-                        android:layout_toRightOf="@+id/imageView40"
-                        android:layout_toEndOf="@+id/imageView40"
+                        android:text="Culprit"
+                        android:id="@+id/textView109"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
                         android:layout_marginLeft="10dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="j.bates@yahoo.com"
-                        android:id="@+id/textView120"
-                        android:layout_below="@+id/textView119"
-                        android:layout_toRightOf="@+id/imageView40"
-                        android:layout_toEndOf="@+id/imageView40"
-                        android:layout_marginLeft="10dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Unit # 107"
-                        android:id="@+id/textView121"
-                        android:layout_below="@+id/textView120"
-                        android:layout_toRightOf="@+id/imageView40"
-                        android:layout_toEndOf="@+id/imageView40"
-                        android:layout_marginLeft="10dp" />
-
                 </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Sparky"
+                    android:id="@+id/textView110"
+                    android:layout_below="@+id/relativeLayout7"
+                    android:layout_alignLeft="@+id/imageView37"
+                    android:layout_alignStart="@+id/imageView37"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Male - Neutered--60lbs"
+                    android:id="@+id/textView111"
+                    android:layout_below="@+id/textView110"
+                    android:layout_alignLeft="@+id/textView110"
+                    android:layout_alignStart="@+id/textView110"
+                    android:layout_marginTop="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Breed: "
+                    android:id="@+id/textView112"
+                    android:layout_below="@+id/textView111"
+                    android:layout_alignLeft="@+id/textView111"
+                    android:layout_alignStart="@+id/textView111"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Australian Shepherd"
+                    android:id="@+id/textView113"
+                    android:layout_below="@+id/textView111"
+                    android:layout_toRightOf="@+id/textView112"
+                    android:layout_toEndOf="@+id/textView112"
+                    android:layout_marginTop="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Coloring: "
+                    android:id="@+id/textView114"
+                    android:layout_alignLeft="@+id/textView112"
+                    android:layout_alignStart="@+id/textView112"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/textView113" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Shots: "
+                    android:id="@+id/textView116"
+                    android:layout_below="@+id/textView114"
+                    android:layout_alignLeft="@+id/textView114"
+                    android:layout_alignStart="@+id/textView114"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Up to date"
+                    android:id="@+id/textView117"
+                    android:layout_below="@+id/textView114"
+                    android:layout_toRightOf="@+id/textView116"
+                    android:layout_toEndOf="@+id/textView116"
+                    android:layout_marginTop="5dp" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/imageView38"
+                    android:src="@drawable/splash_screen_dog"
+                    android:layout_alignTop="@+id/imageView39"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="10dp" />
+
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/imageView39"
+                    android:src="@drawable/splash_screen_busted"
+                    android:layout_alignTop="@+id/textView110"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/background"
+                    android:id="@+id/relativeLayout8"
+                    android:layout_below="@+id/textView116"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Owner"
+                        android:id="@+id/textView118"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginLeft="10dp" />
+                </RelativeLayout>
+
+                <com.andexert.library.RippleView
+                    android:id="@+id/rvp_residents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    rv_centered="true"
+                    android:layout_weight="0.37"
+                    android:padding="10dp"
+                    android:background="@drawable/cancle_backgrounnd"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/relativeLayout8">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="80dp"
+                            android:id="@+id/imageView40"
+                            android:src="@drawable/avatar"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Jimmy Bates"
+                            android:id="@+id/textView119"
+                            android:textStyle="bold"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@+id/imageView40"
+                            android:layout_toEndOf="@+id/imageView40"
+                            android:layout_marginLeft="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="j.bates@yahoo.com"
+                            android:id="@+id/textView120"
+                            android:layout_below="@+id/textView119"
+                            android:layout_toRightOf="@+id/imageView40"
+                            android:layout_toEndOf="@+id/imageView40"
+                            android:layout_marginLeft="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Unit # 107"
+                            android:id="@+id/textView121"
+                            android:layout_below="@+id/textView120"
+                            android:layout_toRightOf="@+id/imageView40"
+                            android:layout_toEndOf="@+id/imageView40"
+                            android:layout_marginLeft="10dp" />
+
+                    </RelativeLayout>
 
                 </com.andexert.library.RippleView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Australian Shepherd"
-                android:id="@+id/textView115"
-                android:layout_alignTop="@+id/textView114"
-                android:layout_toRightOf="@+id/textView114"
-                android:layout_toEndOf="@+id/textView114" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Australian Shepherd"
+                    android:id="@+id/textView115"
+                    android:layout_alignTop="@+id/textView114"
+                    android:layout_toRightOf="@+id/textView114"
+                    android:layout_toEndOf="@+id/textView114" />
+            </RelativeLayout>
+
+
 
 
         </RelativeLayout>

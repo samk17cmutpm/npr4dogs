@@ -45,19 +45,19 @@
         android:layout_alignBottom="@+id/imageView27"
         android:layout_toRightOf="@+id/imageView27"
         android:layout_toEndOf="@+id/imageView27"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="3dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Pending to test "
+        android:text="Unable To Match "
         android:id="@+id/textView81"
         android:textColor="@color/red"
         android:layout_alignBottom="@+id/imageView28"
         android:layout_toRightOf="@+id/textView80"
-        android:layout_toEndOf="@+id/textView80"
-        android:layout_marginLeft="10dp" />
+        android:layout_toEndOf="@+id/textView80" />
 
     <ImageView
         android:layout_width="50dp"

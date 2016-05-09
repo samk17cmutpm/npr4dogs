@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity implements Base{
             boolean isFromAction = getIntent().getBooleanExtra(IS_FROM_ACTION, false);
             int viewPager = getIntent().getIntExtra(PAGE, 0);
             int currentTab = getIntent().getIntExtra(CURRENT_TAB, 0);
-            mainFragment = MainFragment.newInstance(isFromAction, viewPager, currentTab);
+            int position = getIntent().getIntExtra(POSITION, 0);
+            mainFragment = MainFragment.newInstance(isFromAction, viewPager, currentTab, position);
             ActivityUtils.addFragmentToActivity(
                 getSupportFragmentManager(), mainFragment, R.id.contentFrame
             );
