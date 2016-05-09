@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.andexert.library.RippleView;
 
@@ -48,13 +49,14 @@ public class SignInFragment extends BaseFragment implements SignInContract.View,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_sign_in, container, false);
-        rippleView = (RippleView) root.findViewById(R.id.go_to_piles);
+        rippleView = (RippleView) root.findViewById(R.id.abcddd);
         rippleView.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
             public void onComplete(RippleView rippleView) {
                 signInSuccessfully(true);
             }
         });
+
         presenter.loadForm();
         return root;
     }
@@ -85,11 +87,13 @@ public class SignInFragment extends BaseFragment implements SignInContract.View,
     @Override
     public void goToWebViewSignUp() {
 
+        Toast.makeText(getContext(), "Sign Up New Account", Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     public void goToGetPasswordForm() {
-
+        Toast.makeText(getContext(), "Forgot Pass Word ", Toast.LENGTH_SHORT).show();
     }
 
     @Override

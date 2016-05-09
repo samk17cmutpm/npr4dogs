@@ -62,5 +62,11 @@ public class AddADogActivity extends AppCompatActivity implements Base {
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(AddADogActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

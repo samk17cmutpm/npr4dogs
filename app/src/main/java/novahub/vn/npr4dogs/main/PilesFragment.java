@@ -39,7 +39,7 @@ public class PilesFragment extends BaseFragment implements MainContract.BasePile
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_piles, container, false);
-        rippleView = (RippleView) root.findViewById(R.id.go_to_piles);
+        rippleView = (RippleView) root.findViewById(R.id.abcddd);
         rippleView.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
 
             @Override

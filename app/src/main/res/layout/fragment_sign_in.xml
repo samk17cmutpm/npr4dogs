@@ -126,7 +126,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <com.andexert.library.RippleView
-            android:id="@+id/go_to_piles"
+            android:id="@+id/abcddd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             rv_centered="true"
@@ -160,8 +160,8 @@
             android:id="@+id/tv_forgot_password"
             android:textColor="@color/white"
             android:layout_alignTop="@+id/view"
-            android:layout_alignRight="@+id/go_to_piles"
-            android:layout_alignEnd="@+id/go_to_piles"
+            android:layout_alignRight="@+id/abcddd"
+            android:layout_alignEnd="@+id/abcddd"
             android:layout_marginTop="15dp" />
 
         <TextView
@@ -171,7 +171,7 @@
             android:text="DON&apos;T HAVE AN ACCOUNT? "
             android:id="@+id/textView2"
             android:layout_marginTop="39dp"
-            android:layout_below="@+id/go_to_piles"
+            android:layout_below="@+id/abcddd"
             android:layout_toLeftOf="@+id/imageView2"
             android:layout_toStartOf="@+id/imageView2"
             android:textColor="@color/background.blur" />

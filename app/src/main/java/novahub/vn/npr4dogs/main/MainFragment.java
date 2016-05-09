@@ -74,16 +74,16 @@ public class MainFragment extends BaseFragment implements MainContract.View, Bas
 
         // Create items
         AHBottomNavigationItem tabAddADog =
-                new AHBottomNavigationItem(R.string.tab_add_a_dog, R.drawable.add_a_dog_icon, R.color.tab_background);
+                new AHBottomNavigationItem(R.string.tab_add_a_dog, R.drawable.dog1, R.color.tab_background);
 
         AHBottomNavigationItem tabPiles =
-                new AHBottomNavigationItem(R.string.tab_piles, R.drawable.ic_apps_black_24dp, R.color.tab_background);
+                new AHBottomNavigationItem(R.string.tab_piles, R.drawable.icon, R.color.tab_background);
 
         AHBottomNavigationItem tabResidents =
-                new AHBottomNavigationItem(R.string.tab_residents, R.drawable.residents_icon, R.color.tab_background);
+                new AHBottomNavigationItem(R.string.tab_residents, R.drawable.ic_supervisor_account_white_24px, R.color.tab_background);
 
         AHBottomNavigationItem tabSettings =
-                new AHBottomNavigationItem(R.string.tab_setting, R.drawable.settings_icon, R.color.tab_background);
+                new AHBottomNavigationItem(R.string.tab_setting, R.drawable.ic_settings_white_24px, R.color.tab_background);
 
         // Add items
         bottomNavigation.addItem(tabAddADog);

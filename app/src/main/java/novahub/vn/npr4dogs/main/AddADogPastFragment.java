@@ -72,7 +72,7 @@ public class AddADogPastFragment extends BaseFragment implements MainContract.Ba
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position > 2) {
+                if (position > 1) {
                     Intent intent = new Intent(getContext(), MainActivity.class);
                     intent.putExtra(IS_FROM_ACTION, true);
                     intent.putExtra(FROM, FROM_ADD_A_DOG);

@@ -28,11 +28,13 @@ public class SignInPresenter implements SignInContract.Presenter{
     @Override
     public void signUpNewAccount() {
         Log.d(TAG, "sign up new account");
+        signInView.goToWebViewSignUp();
     }
 
     @Override
     public void forgotPassword() {
         Log.d(TAG, "forgot password");
+        signInView.goToGetPasswordForm();
     }
 
     @Override
