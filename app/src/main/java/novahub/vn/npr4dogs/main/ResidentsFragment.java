@@ -10,7 +10,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.SearchView;
+
+import com.andexert.library.RippleView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +36,8 @@ public class ResidentsFragment extends BaseFragment implements MainContract.Base
     private RecyclerView.LayoutManager layoutManager;
     private ResidentsRecyclerViewAdapter residentsRecyclerViewAdapter;
     private View root;
+    private RippleView rippleViewSearch;
+    private SearchView searchView;
     public ResidentsFragment() {
         // Required empty public constructor
     }
@@ -49,6 +55,25 @@ public class ResidentsFragment extends BaseFragment implements MainContract.Base
         root = inflater.inflate(R.layout.fragment_residents, container, false);
         presenter.loadSegments();
         presenter.loadRecyclerView();
+
+        searchView = (SearchView) root.findViewById(R.id.searchView);
+
+
+        rippleViewSearch = (RippleView) root.findViewById(R.id.rpv_search);
+        rippleViewSearch.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+            @Override
+            public void onComplete(RippleView rippleView) {
+
+                rippleViewSearch.setVisibility(View.GONE);
+                searchView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        searchView.setIconified(false);
+                    }
+                });
+
+            }
+        });
         return root;
     }
 

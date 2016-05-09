@@ -53,7 +53,7 @@
             </info.hoang8f.android.segmented.SegmentedGroup>
 
             <com.andexert.library.RippleView
-                android:id="@+id/rpv_scan_barcode"
+                android:id="@+id/rpv_search"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 rv_centered="true"
@@ -62,7 +62,8 @@
                 android:layout_marginTop="65dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:background="@drawable/search_background">
+                android:background="@drawable/search_background"
+                android:visibility="visible">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -89,10 +90,20 @@
                         android:layout_toLeftOf="@+id/textView23"
                         android:layout_toStartOf="@+id/textView23"
                         android:layout_marginRight="10dp" />
+
+
                 </RelativeLayout>
 
 
             </com.andexert.library.RippleView>
+
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/searchView"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
 
 
         </RelativeLayout>
