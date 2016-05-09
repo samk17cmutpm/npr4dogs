@@ -4,12 +4,10 @@ package novahub.vn.npr4dogs.main;
  * Created by samnguyen on 5/7/16.
  */
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
 
@@ -126,7 +124,7 @@ public class TestBaseAdapter extends ArrayAdapter<Pile> implements
         if (type == 0) {
             return mInflater.inflate(R.layout.test_list_item_layout, viewGroup, false);
         } else  {
-            return mInflater.inflate(R.layout.test_list, viewGroup, false);
+            return mInflater.inflate(R.layout.pile_detail_match_found, viewGroup, false);
         }
     }
 
