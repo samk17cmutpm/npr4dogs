@@ -34,7 +34,7 @@ public class PilesActivity extends AppCompatActivity implements Base{
         indicator.setViewPager(viewPager);
         pilesPagerAdapter.registerDataSetObserver(indicator.getDataSetObserver());
 
-        rippleViewCancel = (RippleView) findViewById(R.id.rpv_done);
+        rippleViewCancel = (RippleView) findViewById(R.id.rpv_cancel);
         rippleViewCancel.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
             public void onComplete(RippleView rippleView) {
@@ -54,6 +54,14 @@ public class PilesActivity extends AppCompatActivity implements Base{
 
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(PilesActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }

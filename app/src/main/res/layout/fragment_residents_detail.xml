@@ -43,7 +43,7 @@
                         android:layout_weight="0.37"
                         android:padding="10dp"
                         android:background="@drawable/cancle_backgrounnd"
-                        android:layout_alignTop="@+id/rpv_done"
+                        android:layout_alignTop="@+id/rpv_cancel"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true">
                         <RelativeLayout
@@ -69,7 +69,7 @@
                     </com.andexert.library.RippleView>
 
                     <com.andexert.library.RippleView
-                        android:id="@+id/rpv_done"
+                        android:id="@+id/rpv_cancel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         rv_centered="true"

@@ -31,7 +31,7 @@
             android:background="@color/main.background">
 
             <com.andexert.library.RippleView
-                android:id="@+id/abcddd"
+                android:id="@+id/rvp_submit_feedback"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 rv_centered="true"
@@ -56,7 +56,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:id="@+id/imageView10"
-                    android:layout_alignBottom="@+id/abcddd"
+                    android:layout_alignBottom="@+id/rvp_submit_feedback"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/arrow_right_gray" />
@@ -101,7 +101,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:id="@+id/imageView1ds0"
-                    android:layout_alignBottom="@+id/abcddd"
+                    android:layout_alignBottom="@+id/rvp_help"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/arrow_right_gray" />
@@ -121,7 +121,7 @@
             android:layout_alignParentEnd="true" >
 
             <com.andexert.library.RippleView
-                android:id="@+id/abcddd"
+                android:id="@+id/rvp_help"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 rv_centered="true"

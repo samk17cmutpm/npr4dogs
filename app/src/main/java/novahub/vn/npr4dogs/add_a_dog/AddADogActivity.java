@@ -36,7 +36,7 @@ public class AddADogActivity extends AppCompatActivity implements Base {
         indicator.setViewPager(viewPager);
         addADogPagerAdapter.registerDataSetObserver(indicator.getDataSetObserver());
 
-        rippleViewCancel = (RippleView) findViewById(R.id.rpv_done);
+        rippleViewCancel = (RippleView) findViewById(R.id.rpv_cancel);
         rippleViewCancel.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
             public void onComplete(RippleView rippleView) {

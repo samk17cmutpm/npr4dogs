@@ -1,6 +1,7 @@
 package novahub.vn.npr4dogs.add_a_dog;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -10,13 +11,16 @@ import android.view.ViewGroup;
 
 import com.andexert.library.RippleView;
 
+import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
+import novahub.vn.npr4dogs.survey.SurveyActivity;
+import novahub.vn.npr4dogs.take_photo.TakeAPhotoActivity;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class StepTwoFragment extends BaseFragment implements AddADogContract.View {
+public class StepTwoFragment extends BaseFragment implements AddADogContract.View, Base {
     private AddADogContract.Presenter presenter;
     private View root;
     private RippleView rippleView;
@@ -40,9 +44,14 @@ public class StepTwoFragment extends BaseFragment implements AddADogContract.Vie
 
             @Override
             public void onComplete(RippleView rippleView) {
-                Log.d("Sample", "Ripple completed");
-                presenter.goNext(2);
-                presenter.setIndicatorVisibility(false);
+                Intent intent = new Intent(getContext(), SurveyActivity.class);
+                intent.putExtra(FROM, FROM_ADD_A_DOG);
+                intent.putExtra(PAGE, GO_TO_PAYMENT);
+                getContext().startActivity(intent);
+                getActivity().finish();
+//                Log.d("Sample", "Ripple completed");
+//                presenter.goNext(2);
+//                presenter.setIndicatorVisibility(false);
             }
 
         });

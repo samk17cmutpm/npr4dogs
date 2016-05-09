@@ -101,7 +101,7 @@ public class AddADogPastFragment extends BaseFragment implements MainContract.Ba
 
         });
 
-        rippleViewEdit = (RippleView) root.findViewById(R.id.rpv_done);
+        rippleViewEdit = (RippleView) root.findViewById(R.id.rpv_cancel);
         rippleViewEdit.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
 
             @Override

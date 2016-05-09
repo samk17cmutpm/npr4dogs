@@ -5,9 +5,11 @@ import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,6 +31,7 @@ public class SignInFragment extends BaseFragment implements SignInContract.View,
     private TextView tvSignUp;
     private Button btSignIn;
     private RippleView rippleView;
+    private EditText editTextPassword;
 
     public SignInFragment() {
         // Required empty public constructor
@@ -58,6 +61,17 @@ public class SignInFragment extends BaseFragment implements SignInContract.View,
         });
 
         presenter.loadForm();
+        editTextPassword = (EditText) root.findViewById(R.id.password);
+        editTextPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_UNSPECIFIED) {
+                    signInSuccessfully(true);
+                    return true;
+                }
+                return false;
+            }
+        });
         return root;
     }
 

@@ -75,7 +75,7 @@ public class TakeAPhotoActivity extends AppCompatActivity implements Base{
 
         });
 
-        rippleViewDone = (RippleView) findViewById(R.id.rpv_done);
+        rippleViewDone = (RippleView) findViewById(R.id.rpv_cancel);
         rippleViewDone.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
 
             @Override

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="novahub.vn.npr4dogs.survey.SurveyActivity"
+    tools:showIn="@layout/activity_survey"
+    android:background="@color/background.blur">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="1"
+        android:id="@+id/textView122"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="What is the tenant&apos;s unit number?*"
+        android:id="@+id/textView123"
+        android:layout_alignTop="@+id/textView122"
+        android:layout_toRightOf="@+id/textView122"
+        android:layout_toEndOf="@+id/textView122"
+        android:layout_alignBottom="@+id/textView122" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText9"
+        android:layout_below="@+id/textView122"
+        android:layout_alignLeft="@+id/textView122"
+        android:layout_alignStart="@+id/textView122"
+        android:layout_alignRight="@+id/textView123"
+        android:layout_alignEnd="@+id/textView123"
+        android:lines="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="2"
+        android:id="@+id/textView124"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/editText9"
+        android:layout_alignLeft="@+id/editText9"
+        android:layout_alignStart="@+id/editText9" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Is this dog already registered with NPR?* "
+        android:id="@+id/textView125"
+        android:layout_alignTop="@+id/textView124"
+        android:layout_toRightOf="@+id/textView122"
+        android:layout_toEndOf="@+id/textView122" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText10"
+        android:layout_below="@+id/textView125"
+        android:layout_alignLeft="@+id/textView124"
+        android:layout_alignStart="@+id/textView124"
+        android:layout_marginTop="30dp"
+        android:layout_alignRight="@+id/textView125"
+        android:layout_alignEnd="@+id/textView125"
+        android:lines="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="3"
+        android:id="@+id/textView126"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/editText10"
+        android:layout_alignLeft="@+id/editText10"
+        android:layout_alignStart="@+id/editText10" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="What is the Owner&apos;s First Name?* "
+        android:id="@+id/textView127"
+        android:layout_alignTop="@+id/textView126"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText11"
+        android:layout_below="@+id/textView126"
+        android:layout_alignLeft="@+id/textView126"
+        android:layout_alignStart="@+id/textView126"
+        android:layout_marginTop="28dp"
+        android:layout_alignRight="@+id/textView127"
+        android:layout_alignEnd="@+id/textView127"
+        android:lines="1" />
+
+    <com.andexert.library.RippleView
+        android:id="@+id/rpv_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        rv_centered="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="100dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
+
+        <Button
+            android:id="@+id/bt_sign_in"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:textStyle="bold"
+            android:layout_below="@+id/view"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/sign_in_radius_button" />
+
+    </com.andexert.library.RippleView>
+</RelativeLayout>

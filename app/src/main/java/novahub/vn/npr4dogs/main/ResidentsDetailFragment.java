@@ -53,7 +53,7 @@ public class ResidentsDetailFragment extends Fragment implements MainContract.Ba
 
         });
 
-        rippleViewDone = (RippleView) root.findViewById(R.id.rpv_done);
+        rippleViewDone = (RippleView) root.findViewById(R.id.rpv_cancel);
         rippleViewDone.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
 
             @Override

@@ -31,4 +31,5 @@
     <string name="title_activity_scan_card_io">ScanCardIOActivity</string>
     <string name="title_activity_scan_barcode">ScanBarcodeActivity</string>
     <string name="title_activity_take_aphoto">TakeAPhotoActivity</string>
+    <string name="title_activity_survey">SurveyActivity</string>
 </resources>
