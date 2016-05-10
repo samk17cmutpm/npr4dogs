@@ -93,6 +93,8 @@
         <activity
             android:name=".survey.SurveyActivity"
             android:label="@string/title_activity_survey"
+            android:windowSoftInputMode="stateVisible"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

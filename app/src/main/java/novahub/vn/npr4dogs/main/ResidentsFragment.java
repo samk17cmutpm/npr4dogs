@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.SearchView;
 
@@ -25,6 +26,7 @@ import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
 import novahub.vn.npr4dogs.data.Resident;
 import novahub.vn.npr4dogs.lib.NonSwipeableViewPager;
+import novahub.vn.npr4dogs.utils.ActivityUtils;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,7 +39,8 @@ public class ResidentsFragment extends BaseFragment implements MainContract.Base
     private ResidentsRecyclerViewAdapter residentsRecyclerViewAdapter;
     private View root;
     private RippleView rippleViewSearch;
-    private SearchView searchView;
+    private EditText editTextSearch;
+    private ImageView imageViewCloseSearch;
     public ResidentsFragment() {
         // Required empty public constructor
     }
@@ -56,24 +59,44 @@ public class ResidentsFragment extends BaseFragment implements MainContract.Base
         presenter.loadSegments();
         presenter.loadRecyclerView();
 
-        searchView = (SearchView) root.findViewById(R.id.searchView);
-
-
         rippleViewSearch = (RippleView) root.findViewById(R.id.rpv_search);
-        rippleViewSearch.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+        rippleViewSearch.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onComplete(RippleView rippleView) {
-
+            public void onClick(View v) {
                 rippleViewSearch.setVisibility(View.GONE);
-                searchView.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        searchView.setIconified(false);
-                    }
-                });
-
+                editTextSearch.setVisibility(View.VISIBLE);
+                imageViewCloseSearch.setVisibility(View.VISIBLE);
+                editTextSearch.performClick();
+                ActivityUtils.showSoftKeyboard(editTextSearch, getContext());
             }
         });
+
+
+        editTextSearch = (EditText) root.findViewById(R.id.editTextSearch);
+        imageViewCloseSearch = (ImageView) root.findViewById(R.id.imageViewCloseSearch);
+        imageViewCloseSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ActivityUtils.hideSoftKeyboard(root, getContext());
+                editTextSearch.setVisibility(View.GONE);
+                imageViewCloseSearch.setVisibility(View.GONE);
+                rippleViewSearch.setVisibility(View.VISIBLE);
+            }
+        });
+
+//        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+//            @Override
+//            public boolean onClose() {
+//                searchView.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        searchView.setIconified(true);
+//                        rippleViewSearch.setVisibility(View.VISIBLE);
+//                    }
+//                });
+//                return false;
+//            }
+//        });
         return root;
     }
 

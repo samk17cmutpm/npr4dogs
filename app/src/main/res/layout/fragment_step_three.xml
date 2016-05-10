@@ -90,6 +90,7 @@
                         android:inputType="textEmailAddress"
                         android:ems="10"
                         android:id="@+id/editText"
+                        android:textCursorDrawable="@drawable/color_cursor"
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@+id/imageView12"
                         android:layout_toEndOf="@+id/imageView12"
@@ -162,8 +163,9 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:selectAllOnFocus="false"
+                        android:textCursorDrawable="@drawable/color_cursor"
                         android:inputType="number"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="4dp"
                         android:hint="Card number" />
 
                     <EditText
@@ -176,7 +178,8 @@
                         android:layout_toLeftOf="@+id/linearLayout3"
                         android:layout_toStartOf="@+id/linearLayout3"
                         android:inputType="date"
-                        android:layout_marginTop="5dp"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:layout_marginTop="4dp"
                         android:hint="MM / YY" />
 
                     <ImageView
@@ -201,6 +204,7 @@
                         android:layout_toEndOf="@+id/imageView15"
                         android:layout_marginLeft="10dp"
                         android:inputType="number"
+                        android:textCursorDrawable="@drawable/color_cursor"
                         android:hint="CVC" />
                 </RelativeLayout>
 

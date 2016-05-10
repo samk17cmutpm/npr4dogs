@@ -14,6 +14,7 @@ import novahub.vn.npr4dogs.Base;
 import novahub.vn.npr4dogs.BaseFragment;
 import novahub.vn.npr4dogs.R;
 import novahub.vn.npr4dogs.piles.PilesActivity;
+import novahub.vn.npr4dogs.utils.ActivityUtils;
 
 /**
  * A simple {@link Fragment} subclass.

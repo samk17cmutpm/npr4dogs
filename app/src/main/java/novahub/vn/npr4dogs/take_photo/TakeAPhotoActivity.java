@@ -163,7 +163,9 @@ public class TakeAPhotoActivity extends AppCompatActivity implements Base{
                     e.printStackTrace();
                 }
                 int orientation = ei.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED);
-
+                Log.d("==============>", String.valueOf(orientation));
+                Log.d("==============>", String.valueOf(ExifInterface.ORIENTATION_ROTATE_90));
+                Log.d("==============>", String.valueOf(ExifInterface.ORIENTATION_ROTATE_180));
                 switch(orientation) {
                     case ExifInterface.ORIENTATION_ROTATE_90:
                         ivPreview.setImageBitmap(rotateImage(takenImage, 90));
@@ -171,6 +173,8 @@ public class TakeAPhotoActivity extends AppCompatActivity implements Base{
                     case ExifInterface.ORIENTATION_ROTATE_180:
                         ivPreview.setImageBitmap(rotateImage(takenImage, 180));
                         break;
+                    case ExifInterface.ORIENTATION_NORMAL:
+                        ivPreview.setImageBitmap(takenImage);
                     // etc.
                 }
 

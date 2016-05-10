@@ -123,6 +123,7 @@ public class MainFragment extends BaseFragment implements MainContract.View, Bas
         bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position, boolean wasSelected) {
+                ActivityUtils.hideSoftKeyboard(root, getContext());
                 if (!from) {
                     presenter.loadTabDetails(position);
                 }
